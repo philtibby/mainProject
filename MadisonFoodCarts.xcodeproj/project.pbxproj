@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A5FC7941BCDA5340068754A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FC7931BCDA5340068754A /* AppDelegate.swift */; };
+		4A5FC7961BCDA5340068754A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FC7951BCDA5340068754A /* ViewController.swift */; };
+		4A5FC7991BCDA5340068754A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5FC7971BCDA5340068754A /* Main.storyboard */; };
+		4A5FC79B1BCDA5340068754A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A5FC79A1BCDA5340068754A /* Assets.xcassets */; };
+		4A5FC79E1BCDA5340068754A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5FC79C1BCDA5340068754A /* LaunchScreen.storyboard */; };
+		4A5FC7A91BCDA5340068754A /* MadisonFoodCartsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FC7A81BCDA5340068754A /* MadisonFoodCartsTests.swift */; };
+		4A5FC7B41BCDA5340068754A /* MadisonFoodCartsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FC7B31BCDA5340068754A /* MadisonFoodCartsUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A5FC7A51BCDA5340068754A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A5FC7881BCDA5340068754A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A5FC78F1BCDA5340068754A;
+			remoteInfo = MadisonFoodCarts;
+		};
+		4A5FC7B01BCDA5340068754A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A5FC7881BCDA5340068754A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A5FC78F1BCDA5340068754A;
+			remoteInfo = MadisonFoodCarts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A5FC7901BCDA5340068754A /* MadisonFoodCarts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MadisonFoodCarts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A5FC7931BCDA5340068754A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4A5FC7951BCDA5340068754A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4A5FC7981BCDA5340068754A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4A5FC79A1BCDA5340068754A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A5FC79D1BCDA5340068754A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4A5FC79F1BCDA5340068754A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A5FC7A41BCDA5340068754A /* MadisonFoodCartsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MadisonFoodCartsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A5FC7A81BCDA5340068754A /* MadisonFoodCartsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadisonFoodCartsTests.swift; sourceTree = "<group>"; };
+		4A5FC7AA1BCDA5340068754A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A5FC7AF1BCDA5340068754A /* MadisonFoodCartsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MadisonFoodCartsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A5FC7B31BCDA5340068754A /* MadisonFoodCartsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadisonFoodCartsUITests.swift; sourceTree = "<group>"; };
+		4A5FC7B51BCDA5340068754A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A5FC78D1BCDA5340068754A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A5FC7A11BCDA5340068754A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A5FC7AC1BCDA5340068754A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A5FC7871BCDA5340068754A = {
+			isa = PBXGroup;
+			children = (
+				4A5FC7921BCDA5340068754A /* MadisonFoodCarts */,
+				4A5FC7A71BCDA5340068754A /* MadisonFoodCartsTests */,
+				4A5FC7B21BCDA5340068754A /* MadisonFoodCartsUITests */,
+				4A5FC7911BCDA5340068754A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A5FC7911BCDA5340068754A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FC7901BCDA5340068754A /* MadisonFoodCarts.app */,
+				4A5FC7A41BCDA5340068754A /* MadisonFoodCartsTests.xctest */,
+				4A5FC7AF1BCDA5340068754A /* MadisonFoodCartsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A5FC7921BCDA5340068754A /* MadisonFoodCarts */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FC7931BCDA5340068754A /* AppDelegate.swift */,
+				4A5FC7951BCDA5340068754A /* ViewController.swift */,
+				4A5FC7971BCDA5340068754A /* Main.storyboard */,
+				4A5FC79A1BCDA5340068754A /* Assets.xcassets */,
+				4A5FC79C1BCDA5340068754A /* LaunchScreen.storyboard */,
+				4A5FC79F1BCDA5340068754A /* Info.plist */,
+			);
+			path = MadisonFoodCarts;
+			sourceTree = "<group>";
+		};
+		4A5FC7A71BCDA5340068754A /* MadisonFoodCartsTests */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FC7A81BCDA5340068754A /* MadisonFoodCartsTests.swift */,
+				4A5FC7AA1BCDA5340068754A /* Info.plist */,
+			);
+			path = MadisonFoodCartsTests;
+			sourceTree = "<group>";
+		};
+		4A5FC7B21BCDA5340068754A /* MadisonFoodCartsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4A5FC7B31BCDA5340068754A /* MadisonFoodCartsUITests.swift */,
+				4A5FC7B51BCDA5340068754A /* Info.plist */,
+			);
+			path = MadisonFoodCartsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A5FC78F1BCDA5340068754A /* MadisonFoodCarts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A5FC7B81BCDA5340068754A /* Build configuration list for PBXNativeTarget "MadisonFoodCarts" */;
+			buildPhases = (
+				4A5FC78C1BCDA5340068754A /* Sources */,
+				4A5FC78D1BCDA5340068754A /* Frameworks */,
+				4A5FC78E1BCDA5340068754A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MadisonFoodCarts;
+			productName = MadisonFoodCarts;
+			productReference = 4A5FC7901BCDA5340068754A /* MadisonFoodCarts.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4A5FC7A31BCDA5340068754A /* MadisonFoodCartsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A5FC7BB1BCDA5340068754A /* Build configuration list for PBXNativeTarget "MadisonFoodCartsTests" */;
+			buildPhases = (
+				4A5FC7A01BCDA5340068754A /* Sources */,
+				4A5FC7A11BCDA5340068754A /* Frameworks */,
+				4A5FC7A21BCDA5340068754A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A5FC7A61BCDA5340068754A /* PBXTargetDependency */,
+			);
+			name = MadisonFoodCartsTests;
+			productName = MadisonFoodCartsTests;
+			productReference = 4A5FC7A41BCDA5340068754A /* MadisonFoodCartsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4A5FC7AE1BCDA5340068754A /* MadisonFoodCartsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A5FC7BE1BCDA5340068754A /* Build configuration list for PBXNativeTarget "MadisonFoodCartsUITests" */;
+			buildPhases = (
+				4A5FC7AB1BCDA5340068754A /* Sources */,
+				4A5FC7AC1BCDA5340068754A /* Frameworks */,
+				4A5FC7AD1BCDA5340068754A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A5FC7B11BCDA5340068754A /* PBXTargetDependency */,
+			);
+			name = MadisonFoodCartsUITests;
+			productName = MadisonFoodCartsUITests;
+			productReference = 4A5FC7AF1BCDA5340068754A /* MadisonFoodCartsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A5FC7881BCDA5340068754A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Philip Tibbetts";
+				TargetAttributes = {
+					4A5FC78F1BCDA5340068754A = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					4A5FC7A31BCDA5340068754A = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 4A5FC78F1BCDA5340068754A;
+					};
+					4A5FC7AE1BCDA5340068754A = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 4A5FC78F1BCDA5340068754A;
+					};
+				};
+			};
+			buildConfigurationList = 4A5FC78B1BCDA5340068754A /* Build configuration list for PBXProject "MadisonFoodCarts" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A5FC7871BCDA5340068754A;
+			productRefGroup = 4A5FC7911BCDA5340068754A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A5FC78F1BCDA5340068754A /* MadisonFoodCarts */,
+				4A5FC7A31BCDA5340068754A /* MadisonFoodCartsTests */,
+				4A5FC7AE1BCDA5340068754A /* MadisonFoodCartsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A5FC78E1BCDA5340068754A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A5FC79E1BCDA5340068754A /* LaunchScreen.storyboard in Resources */,
+				4A5FC79B1BCDA5340068754A /* Assets.xcassets in Resources */,
+				4A5FC7991BCDA5340068754A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A5FC7A21BCDA5340068754A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A5FC7AD1BCDA5340068754A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A5FC78C1BCDA5340068754A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A5FC7961BCDA5340068754A /* ViewController.swift in Sources */,
+				4A5FC7941BCDA5340068754A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A5FC7A01BCDA5340068754A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A5FC7A91BCDA5340068754A /* MadisonFoodCartsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A5FC7AB1BCDA5340068754A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A5FC7B41BCDA5340068754A /* MadisonFoodCartsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A5FC7A61BCDA5340068754A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A5FC78F1BCDA5340068754A /* MadisonFoodCarts */;
+			targetProxy = 4A5FC7A51BCDA5340068754A /* PBXContainerItemProxy */;
+		};
+		4A5FC7B11BCDA5340068754A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A5FC78F1BCDA5340068754A /* MadisonFoodCarts */;
+			targetProxy = 4A5FC7B01BCDA5340068754A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4A5FC7971BCDA5340068754A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A5FC7981BCDA5340068754A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4A5FC79C1BCDA5340068754A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A5FC79D1BCDA5340068754A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4A5FC7B61BCDA5340068754A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A5FC7B71BCDA5340068754A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A5FC7B91BCDA5340068754A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MadisonFoodCarts/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.wisc.MadisonFoodCarts;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4A5FC7BA1BCDA5340068754A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MadisonFoodCarts/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.wisc.MadisonFoodCarts;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4A5FC7BC1BCDA5340068754A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MadisonFoodCartsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.wisc.MadisonFoodCartsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MadisonFoodCarts.app/MadisonFoodCarts";
+			};
+			name = Debug;
+		};
+		4A5FC7BD1BCDA5340068754A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MadisonFoodCartsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.wisc.MadisonFoodCartsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MadisonFoodCarts.app/MadisonFoodCarts";
+			};
+			name = Release;
+		};
+		4A5FC7BF1BCDA5340068754A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MadisonFoodCartsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.wisc.MadisonFoodCartsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MadisonFoodCarts;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		4A5FC7C01BCDA5340068754A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MadisonFoodCartsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.wisc.MadisonFoodCartsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MadisonFoodCarts;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A5FC78B1BCDA5340068754A /* Build configuration list for PBXProject "MadisonFoodCarts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A5FC7B61BCDA5340068754A /* Debug */,
+				4A5FC7B71BCDA5340068754A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A5FC7B81BCDA5340068754A /* Build configuration list for PBXNativeTarget "MadisonFoodCarts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A5FC7B91BCDA5340068754A /* Debug */,
+				4A5FC7BA1BCDA5340068754A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4A5FC7BB1BCDA5340068754A /* Build configuration list for PBXNativeTarget "MadisonFoodCartsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A5FC7BC1BCDA5340068754A /* Debug */,
+				4A5FC7BD1BCDA5340068754A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4A5FC7BE1BCDA5340068754A /* Build configuration list for PBXNativeTarget "MadisonFoodCartsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A5FC7BF1BCDA5340068754A /* Debug */,
+				4A5FC7C01BCDA5340068754A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A5FC7881BCDA5340068754A /* Project object */;
+}
