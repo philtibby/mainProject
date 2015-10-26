@@ -15,8 +15,24 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hqN-Fh-khW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                            </mapView>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hqN-Fh-khW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FL5-nD-G3b"/>
+                            <constraint firstItem="hqN-Fh-khW" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="HUR-bw-bye"/>
+                            <constraint firstAttribute="trailing" secondItem="hqN-Fh-khW" secondAttribute="trailing" id="MgF-L8-opj"/>
+                            <constraint firstItem="hqN-Fh-khW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="TDD-2i-zgM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="hqN-Fh-khW" id="xbE-Jx-Kl7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

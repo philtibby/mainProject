@@ -14,6 +14,7 @@
 		4A5FC79E1BCDA5340068754A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5FC79C1BCDA5340068754A /* LaunchScreen.storyboard */; };
 		4A5FC7A91BCDA5340068754A /* MadisonFoodCartsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FC7A81BCDA5340068754A /* MadisonFoodCartsTests.swift */; };
 		4A5FC7B41BCDA5340068754A /* MadisonFoodCartsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FC7B31BCDA5340068754A /* MadisonFoodCartsUITests.swift */; };
+		4A6E650B1BD498B300C8BF67 /* FoodCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E650A1BD498B300C8BF67 /* FoodCart.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		4A5FC7AF1BCDA5340068754A /* MadisonFoodCartsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MadisonFoodCartsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5FC7B31BCDA5340068754A /* MadisonFoodCartsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadisonFoodCartsUITests.swift; sourceTree = "<group>"; };
 		4A5FC7B51BCDA5340068754A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A6E650A1BD498B300C8BF67 /* FoodCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodCart.swift; path = ../FoodCart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		4A5FC7921BCDA5340068754A /* MadisonFoodCarts */ = {
 			isa = PBXGroup;
 			children = (
+				4A6E650A1BD498B300C8BF67 /* FoodCart.swift */,
 				4A5FC7931BCDA5340068754A /* AppDelegate.swift */,
 				4A5FC7951BCDA5340068754A /* ViewController.swift */,
 				4A5FC7971BCDA5340068754A /* Main.storyboard */,
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A6E650B1BD498B300C8BF67 /* FoodCart.swift in Sources */,
 				4A5FC7961BCDA5340068754A /* ViewController.swift in Sources */,
 				4A5FC7941BCDA5340068754A /* AppDelegate.swift in Sources */,
 			);
@@ -481,6 +485,7 @@
 				4A5FC7BA1BCDA5340068754A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A5FC7BB1BCDA5340068754A /* Build configuration list for PBXNativeTarget "MadisonFoodCartsTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +494,7 @@
 				4A5FC7BD1BCDA5340068754A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A5FC7BE1BCDA5340068754A /* Build configuration list for PBXNativeTarget "MadisonFoodCartsUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +503,7 @@
 				4A5FC7C01BCDA5340068754A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
