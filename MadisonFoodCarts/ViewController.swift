@@ -15,13 +15,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        mapView.delegate = self;
+        
         // set initial location in Honolulu
         let initialLocation = CLLocation(latitude: 43.074911, longitude: -89.3986841);
         centerMapOnLocation(initialLocation);
         
         
         let cart = FoodCart(title: "Fake Cart",
-            locationName: "",
+            locationName: "poop",
             discipline: "Food Cart",
             coordinate: CLLocationCoordinate2D(latitude: 43.074911, longitude: -89.3986841))
         
