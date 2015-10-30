@@ -11,13 +11,16 @@ import Foundation
 
 import MapKit
 
-class FoodCart: NSObject, MKAnnotation {
+class FoodCart: NSObject, MKAnnotation
+{
     let title: String?
     let locationName: String
     let discipline: String
     let coordinate: CLLocationCoordinate2D
     
-    init(title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D) {
+    
+    init(title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D)
+    {
         self.title = title
         self.locationName = locationName
         self.discipline = discipline
@@ -26,7 +29,29 @@ class FoodCart: NSObject, MKAnnotation {
         super.init()
     }
     
-    var subtitle: String? {
+    var subtitle: String?
+    {
         return locationName
     }
 }
+
+
+class MenuItem: NSObject
+{
+    let name: String
+    let price: Float
+    let info: String
+    
+    init(name: String, price: Float, info: String)
+    {
+        self.name = name
+        self.price = price
+        self.info = info
+    }
+}
+
+
+
+
+
+
