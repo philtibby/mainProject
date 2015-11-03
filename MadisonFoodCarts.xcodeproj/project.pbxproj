@@ -19,6 +19,7 @@
 		4A5FC7B41BCDA5340068754A /* MadisonFoodCartsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FC7B31BCDA5340068754A /* MadisonFoodCartsUITests.swift */; };
 		4A6E650B1BD498B300C8BF67 /* FoodCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E650A1BD498B300C8BF67 /* FoodCart.swift */; };
 		4A9DDCA21BD583BB00A23649 /* ExtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DDCA11BD583BB00A23649 /* ExtViewController.swift */; };
+		4AF1FDA71BE85EE00003EB1F /* Madison.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 4AF1FDA61BE85EDF0003EB1F /* Madison.gpx */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		4A5FC7B51BCDA5340068754A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A6E650A1BD498B300C8BF67 /* FoodCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodCart.swift; path = ../FoodCart.swift; sourceTree = "<group>"; };
 		4A9DDCA11BD583BB00A23649 /* ExtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtViewController.swift; path = ../ExtViewController.swift; sourceTree = "<group>"; };
+		4AF1FDA61BE85EDF0003EB1F /* Madison.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Madison.gpx; path = ../Madison.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		4A5FC7921BCDA5340068754A /* MadisonFoodCarts */ = {
 			isa = PBXGroup;
 			children = (
+				4AF1FDA61BE85EDF0003EB1F /* Madison.gpx */,
 				38A3390B1BE6645900A621EA /* CartInfoViewController.swift */,
 				4A9DDCA11BD583BB00A23649 /* ExtViewController.swift */,
 				4A6E650A1BD498B300C8BF67 /* FoodCart.swift */,
@@ -246,6 +249,7 @@
 				4A5FC79E1BCDA5340068754A /* LaunchScreen.storyboard in Resources */,
 				4A5FC79B1BCDA5340068754A /* Assets.xcassets in Resources */,
 				4A5FC7991BCDA5340068754A /* Main.storyboard in Resources */,
+				4AF1FDA71BE85EE00003EB1F /* Madison.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
