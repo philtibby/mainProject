@@ -9,13 +9,16 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
+    
+    var locationManager: CLLocationManager!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         mapView.delegate = self;
+        mapView.showsUserLocation = true;
         
         // set initial location in Honolulu
         let initialLocation = CLLocation(latitude: 43.074911, longitude: -89.3986841);
@@ -28,6 +31,17 @@ class ViewController: UIViewController {
             coordinate: CLLocationCoordinate2D(latitude: 43.074911, longitude: -89.3986841))
         
         mapView.addAnnotation(cart)
+        
+        if (CLLocationManager.locationServicesEnabled())
+        {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+            locationManager.desiredAccuracy=kCLLocationAccuracyNearestTenMeters
+            locationManager.distanceFilter = 10
+        }
         
     }
     
@@ -42,6 +56,17 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }*/
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.last as CLLocation!
+        
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        print("fuck");
+        
+        mapView.setRegion(region, animated: true)
+    }
     
     
     @IBOutlet weak var mapView: MKMapView!
