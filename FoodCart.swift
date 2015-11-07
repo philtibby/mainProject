@@ -11,6 +11,7 @@ import Foundation
 
 import MapKit
 import AddressBook
+import Contacts
 
 class FoodCart: NSObject, MKAnnotation
 {
@@ -36,15 +37,16 @@ class FoodCart: NSObject, MKAnnotation
     }
     
     // annotation callout info button opens this mapItem in Maps app
-    /*func mapItem() -> MKMapItem {
-        let addressDictionary = [String(kABPersonAddressStreetKey): subtitle]
-        let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDictionary)
+    func mapItem() -> MKMapItem
+    {
+        let addressDictionary = [String(CNPostalAddressStreetKey): self.subtitle!]
+        let placemark = MKPlacemark(coordinate: self.coordinate, addressDictionary: addressDictionary)
         
         let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = title
+        mapItem.name = self.title
         
         return mapItem
-    }*/
+    }
     
 }
 
