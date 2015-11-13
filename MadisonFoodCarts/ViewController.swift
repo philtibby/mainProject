@@ -28,6 +28,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let cart = FoodCart(title: "Fake Cart",
             locationName: "poop",
             discipline: "Food Cart",
+            cuisineType: "Chinese",
             coordinate: CLLocationCoordinate2D(latitude: 43.074911, longitude: -89.3986841))
         
         mapView.addAnnotation(cart)
