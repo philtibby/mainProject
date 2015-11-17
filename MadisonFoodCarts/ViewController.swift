@@ -57,7 +57,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             if error == nil {
                 // The find succeeded.
-                print("Successfully retrieved \(objects!.count) scores.")
                 // Do something with the found objects
                 if let objects = objects as [PFObject]! {
                     for object in objects {
