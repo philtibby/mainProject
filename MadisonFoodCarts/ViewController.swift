@@ -18,9 +18,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        /*let testObject = PFObject(className: "Location")
+        /*let testObject = PFObject(className: "Cart")
         let point = PFGeoPoint(latitude:43.07345, longitude:-89.39234)
         testObject["Loc"] = point;
+        testObject["CartOwner"] = "Phil";
+        
         testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("Object has been saved.")
         }*/
@@ -50,7 +52,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         var cart : FoodCart?;
         
-        let query = PFQuery(className:"Location")
+        let query = PFQuery(className:"Cart")
         //query.whereKey("playerName", equalTo:"Sean Plott")
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
