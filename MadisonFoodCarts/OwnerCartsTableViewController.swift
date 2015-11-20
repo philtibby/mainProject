@@ -12,10 +12,22 @@ class OwnerCartsTableViewController: UITableViewController
 {
     
     var ownerCarts = [FoodCart]()
+    
+    var newCartCreated = 0;
+    
+    var theAddedCart: FoodCart?
+    
+    var thisOwner: String = ""
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        if (newCartCreated == 1)
+        {
+            ownerCarts.append(theAddedCart!)
+            newCartCreated = 0;
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -48,7 +60,7 @@ class OwnerCartsTableViewController: UITableViewController
         // Configure the cell...
         let currentCart = ownerCarts[indexPath.row]
         
-        cell.textLabel?.text = currentCart.title
+        cell.textLabel?.text = currentCart.cartName
 
         return cell
     }
@@ -89,14 +101,34 @@ class OwnerCartsTableViewController: UITableViewController
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if (segue.identifier == "viewDetails")
+        {
+            // Get the new view controller using segue.destinationViewController.
+            let svc = segue.destinationViewController as! ViewCartDetailsViewController
+            
+            if let indexPath = self.tableView.indexPathForSelectedRow
+            {
+                // Pass the selected object to the new view controller.
+                let selectedCart = ownerCarts[indexPath.row]
+                /*svc.cartName = selectedCart.cartName
+                svc.cuisineType = selectedCart.cuisineType
+                svc.ownerMessage = selectedCart.message*/
+                svc.thisCart = selectedCart
+            }
+        }
+        else if (segue.identifier == "addCart")
+        {
+            // Get the new view controller using segue.destinationViewController.
+            let svc = segue.destinationViewController as! AddNewCartViewController
+            
+            // Pass the selected object to the new view controller.
+            svc.cartOwner = thisOwner
+        }
     }
-    */
-
 }

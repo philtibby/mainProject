@@ -10,8 +10,8 @@ import UIKit
 import MapKit
 import Parse
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
-    
+class ViewController: UIViewController, CLLocationManagerDelegate
+{
     var locationManager: CLLocationManager!
 
     override func viewDidLoad() {
@@ -64,11 +64,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 if let objects = objects as [PFObject]! {
                     for object in objects {
                         //print(object["Loc"]!.latitude)
-                        cart = FoodCart(title: object["CartName"]! as! String,
-                            locationName: "poop",
-                            discipline: "Food Cart",
+                        cart = FoodCart(cartName: object["CartName"]! as! String,
+                            cartOwner: "Philipine",
+                            //locationName: "poop",
+                            //discipline: "Food Cart",
                             cuisineType: "Chinese",
-                            coordinate: CLLocationCoordinate2D(latitude: object["Loc"].latitude, longitude: object["Loc"].longitude))
+                            coordinate: CLLocationCoordinate2D(latitude: object["Loc"].latitude, longitude: object["Loc"].longitude),
+                            message: "This is my message to you oo oo",
+                            isOpen: false)
                         
                         self.mapView.addAnnotation(cart!);
                     }

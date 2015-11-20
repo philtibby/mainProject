@@ -11,6 +11,8 @@ import UIKit
 class CartMenuListTableViewController: UITableViewController
 {
     var menuItems = [MenuItem]()
+    
+    var thisCart: FoodCart?
 
     override func viewDidLoad() {
         super.viewDidLoad()

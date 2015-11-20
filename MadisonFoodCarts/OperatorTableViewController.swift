@@ -9,10 +9,24 @@
 import UIKit
 
 class OperatorTableViewController: UITableViewController {
+    
+    var operators = [String]()
+    
+    var didAddOperator = 0
+    
+    var theAddedOperator: String = ""
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
+        
+        if (didAddOperator == 1)
+        {
+                operators.append(theAddedOperator)
+                didAddOperator = 0
+                self.tableView.reloadData()
+            
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -27,25 +41,31 @@ class OperatorTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        // return the number of sections
+        return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        // return the number of rows
+        return operators.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("operatorCell", forIndexPath: indexPath)
 
         // Configure the cell...
 
+        let currentOperator = operators[indexPath.row]
+        
+        cell.textLabel!.text = currentOperator
+        
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,14 +102,29 @@ class OperatorTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "viewCarts")
+        {
+            let svc = segue.destinationViewController as! OwnerCartsTableViewController
+            
+            // Pass the selected object to the new view controller.
+            if let indexPath = self.tableView.indexPathForSelectedRow
+            {
+                let selectedOperator = operators[indexPath.row]
+                svc.thisOwner = selectedOperator
+            }
+        }
+        else if (segue.identifier == "addOperator")
+        {
+            let svc = segue.destinationViewController as! AddOperatorViewController
+            
+            svc.operatorList = operators
+        }
     }
-    */
-
 }

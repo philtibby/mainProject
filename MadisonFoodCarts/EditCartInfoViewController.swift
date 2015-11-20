@@ -9,6 +9,8 @@
 import UIKit
 
 class EditCartInfoViewController: UIViewController {
+    
+    var thisCart: FoodCart?
 
     override func viewDidLoad() {
         super.viewDidLoad()

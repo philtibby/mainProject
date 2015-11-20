@@ -20,15 +20,15 @@ class MenuTableViewController: UITableViewController {
         
         //////////SAMPLE DATA FOR MENU ITEM STORAGE//////////////
         
-        var newItem = MenuItem(name: "BLT", price: 12.95, info: "Bacon, lettuce, and tomato on a toasted roll")
+        var newItem = MenuItem(name: "BLT", cartName: "Jamerica", price: 12.95, info: "Bacon, lettuce, and tomato on a toasted roll")
         
         menuItems.append(newItem)
         
-        newItem = MenuItem(name: "Chicken Noodle Soup", price: 4.95, info: "Our version of a timeless classic")
+        newItem = MenuItem(name: "Chicken Noodle Soup", cartName:"Jamerica", price: 4.95, info: "Our version of a timeless classic")
         
         menuItems.append(newItem)
         
-        newItem = MenuItem(name: "Lasagna", price: 29.35, info: "Layers and layers of awesomeness. If you don't think our lasagna is the best you've ever tasted then we will be like woah. Seriously though, this fucking lasagna is the bees knees. It's the cats meow. It takes the breath away. It turns chronic depression into chronic happiness. There is no way a human being could consume our lasagna without having an out of body experience featuring at least 2 of the Beatles, a talking spirit animal, and a monk that doesn't speak but rather understands you. And you him. $29.35 is a small price to pay for this shit. Just order it bro")
+        newItem = MenuItem(name: "Lasagna", cartName:"Jamerica", price: 29.35, info: "Layers and layers of awesomeness. If you don't think our lasagna is the best you've ever tasted then we will be like woah. Seriously though, this fucking lasagna is the bees knees. It's the cats meow. It takes the breath away. It turns chronic depression into chronic happiness. There is no way a human being could consume our lasagna without having an out of body experience featuring at least 2 of the Beatles, a talking spirit animal, and a monk that doesn't speak but rather understands you. And you him. $29.35 is a small price to pay for this shit. Just order it bro")
         
         menuItems.append(newItem)
 

@@ -15,29 +15,35 @@ import Contacts
 
 class FoodCart: NSObject, MKAnnotation
 {
-    let title: String?
-    let locationName: String
-    let discipline: String
-    let coordinate: CLLocationCoordinate2D
+    let cartName: String?
+    let cartOwner: String
+    //let locationName: String
+    //let discipline: String
     let cuisineType: String
+    let coordinate: CLLocationCoordinate2D
+    let message: String
+    var isOpen: Bool
     
     
     
-    init(title: String, locationName: String, discipline: String, cuisineType: String, coordinate: CLLocationCoordinate2D)
+    
+    init(cartName: String, cartOwner: String,/*locationName: String*/ /*discipline: String,*/ cuisineType: String, coordinate: CLLocationCoordinate2D, message: String, isOpen: Bool)
     {
-        self.title = title
-        self.locationName = locationName
-        self.discipline = discipline
+        self.cartName = cartName
+        self.cartOwner = cartOwner
+        //self.locationName = locationName
+        //self.discipline = discipline
         self.coordinate = coordinate
         self.cuisineType = cuisineType
-        
+        self.message = message
+        self.isOpen = isOpen
         
         super.init()
     }
     
     var subtitle: String?
     {
-        return locationName
+        return cuisineType
     }
     
     // annotation callout info button opens this mapItem in Maps app
@@ -47,7 +53,7 @@ class FoodCart: NSObject, MKAnnotation
         let placemark = MKPlacemark(coordinate: self.coordinate, addressDictionary: addressDictionary)
         
         let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = self.title
+        mapItem.name = self.cartName
         
         return mapItem
     }
@@ -58,12 +64,14 @@ class FoodCart: NSObject, MKAnnotation
 class MenuItem: NSObject
 {
     let name: String
+    let cartName: String
     let price: Float
     let info: String
     
-    init(name: String, price: Float, info: String)
+    init(name: String, cartName: String, price: Float, info: String)
     {
         self.name = name
+        self.cartName = cartName
         self.price = price
         self.info = info
     }
