@@ -51,7 +51,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate
         
         mapView.addAnnotation(cart2);*/
         
-        var cart : FoodCart?;
+        var cart : FoodCartMap?;
         
         let query = PFQuery(className:"Cart")
         //query.whereKey("playerName", equalTo:"Sean Plott")
@@ -64,7 +64,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate
                 if let objects = objects as [PFObject]! {
                     for object in objects {
                         //print(object["Loc"]!.latitude)
-                        cart = FoodCart(cartName: object["CartName"]! as! String,
+                        cart = FoodCartMap(cartName: object["CartName"]! as! String,
                             cartOwner: "Philipine",
                             //locationName: "poop",
                             //discipline: "Food Cart",

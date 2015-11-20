@@ -13,9 +13,10 @@ import MapKit
 import AddressBook
 import Contacts
 
-class FoodCart: NSObject, MKAnnotation
+class FoodCartMap: NSObject, MKAnnotation
 {
     let cartName: String?
+    let title: String?
     let cartOwner: String
     //let locationName: String
     //let discipline: String
@@ -30,9 +31,8 @@ class FoodCart: NSObject, MKAnnotation
     init(cartName: String, cartOwner: String,/*locationName: String*/ /*discipline: String,*/ cuisineType: String, coordinate: CLLocationCoordinate2D, message: String, isOpen: Bool)
     {
         self.cartName = cartName
+        self.title = cartName
         self.cartOwner = cartOwner
-        //self.locationName = locationName
-        //self.discipline = discipline
         self.coordinate = coordinate
         self.cuisineType = cuisineType
         self.message = message
@@ -75,6 +75,46 @@ class MenuItem: NSObject
         self.price = price
         self.info = info
     }
+}
+
+class FoodCart
+{
+    var cartName: String?
+    var title: String?
+    var cartOwner: String
+    var cuisineType: String
+    var coordinate: CLLocationCoordinate2D?
+    var message: String
+    var isOpen: Bool
+    
+    
+    
+    
+    init(cartName: String, cartOwner: String, cuisineType: String, coordinate: CLLocationCoordinate2D, message: String, isOpen: Bool)
+    {
+        self.cartName = cartName
+        self.title = cartName
+        self.cartOwner = cartOwner
+        self.coordinate = coordinate
+        self.cuisineType = cuisineType
+        self.message = message
+        self.isOpen = isOpen
+        
+    
+    }
+    
+    init(cartName: String, cartOwner: String, cuisineType: String,  message: String, isOpen: Bool)
+    {
+        self.cartName = cartName
+        self.title = cartName
+        self.cartOwner = cartOwner
+        self.cuisineType = cuisineType
+        self.message = message
+        self.isOpen = isOpen
+        
+  
+    }
+
 }
 
 
