@@ -11,17 +11,15 @@ import UIKit
 class ViewCartDetailsViewController: UIViewController
 {
     
+    @IBOutlet weak var activateLabel: UILabel!
+    
+    @IBOutlet weak var activateCart: UISwitch!
+    
     @IBOutlet weak var cartNameLabel: UILabel!
     
     @IBOutlet weak var cuisineTypeLabel: UILabel!
     
     @IBOutlet weak var messageLabel: UITextView!
-    
-    /*var cartName: String?
-    
-    var cuisineType: String?
-    
-    var ownerMessage: String?*/
     
     var thisCart: FoodCart?
 
@@ -29,9 +27,7 @@ class ViewCartDetailsViewController: UIViewController
     {
         super.viewDidLoad()
         
-        /*cartNameLabel.text = cartName
-        cuisineTypeLabel.text = cuisineType
-        messageLabel.text = ownerMessage*/
+        activateCart.addTarget(self, action: Selector("stateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         
         cartNameLabel.text = thisCart!.cartName
         cuisineTypeLabel.text = thisCart!.cuisineType
@@ -47,6 +43,21 @@ class ViewCartDetailsViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func stateChanged(switchState: UISwitch)
+    {
+        if (switchState.on)
+        {
+            activateLabel.text = "Deactivate Cart:"
+            thisCart!.isOpen = true
+        }
+        else
+        {
+            activateLabel.text = "Activate Cart:"
+            thisCart!.isOpen = false
+        }
+    }
+    
 
     
     // MARK: - Navigation
@@ -55,6 +66,7 @@ class ViewCartDetailsViewController: UIViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
         
         
         if (segue.identifier == "editDetails")
@@ -70,12 +82,6 @@ class ViewCartDetailsViewController: UIViewController
             
             svc.thisCart = thisCart
         
-        }
-        else if (segue.identifier == "openCart")
-        {
-            let svc = segue.destinationViewController as! OpenCartViewController
-            
-            svc.thisCart = thisCart
         }
     }
 }

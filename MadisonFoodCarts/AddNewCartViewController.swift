@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class AddNewCartViewController: UIViewController, CLLocationManagerDelegate
+class AddNewCartViewController: UIViewController
 {
     var locationManager: CLLocationManager!
     
@@ -38,6 +38,24 @@ class AddNewCartViewController: UIViewController, CLLocationManagerDelegate
     }
     
 
+    //stops the segue if someone tries to make a new cart with the same name as a current cart
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool
+    {
+        if let ident = identifier
+        {
+            if ident == "addedOperator"
+            {
+                /*if (operatorList!.contains(operatorName.text!)) == true
+                {
+                    let name: String = operatorName.text!
+                    errorLabel.text = "\(name) is already in the list of operators! Please try again!"
+                    return false
+                }*/
+            }
+        }
+        return true
+    }
+    
     
     // MARK: - Navigation
 
@@ -49,34 +67,25 @@ class AddNewCartViewController: UIViewController, CLLocationManagerDelegate
         
         // Pass the selected object to the new view controller.
         
-        /*let newFoodCart = PFObject(className:"Cart")
+       let newFoodCart = PFObject(className:"Cart")
         newFoodCart["CartName"] = cartName.text
         newFoodCart["CartOwner"] = cartOwner
         newFoodCart["CuisineType"] = cuisineType.text
-        newFoodCart["Message"] = ownerMessage.text*/
+        newFoodCart["Message"] = ownerMessage.text
+        newFoodCart["isOpen"] = false
         
-        /*
-        let newFC = FoodCart(cartName: object["CartName"]! as! String, cartOwner: cartOwner!, cuisineType: cuisineType.text!, coordinate: CLLocationCoordinate2D(latitude: object["Loc"].latitude, longitude: object["Loc"].longitude), message: ownerMessage.text, isOpen: false)
-        */
+        newFoodCart.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            print("Object has been saved.")
+        }
         
-        
+        // create a new FoodCart object
+        let newFC = FoodCart(cartName: cartName.text!, cartOwner: cartOwner, cuisineType: cuisineType.text!, message: ownerMessage.text, isOpen: false)
 
-        //svc.theAddedCart = newFC
+        // add it to the list of owner's food carts
+        svc.theAddedCart = newFC
         svc.newCartCreated = 1;
-        
-
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

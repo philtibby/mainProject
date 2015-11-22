@@ -136,7 +136,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Create New Cart" id="a0z-Jf-OWx">
-                        <barButtonItem key="rightBarButtonItem" title="Create" id="6hc-R4-TGb"/>
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="6hc-R4-TGb">
+                            <connections>
+                                <segue destination="BLQ-yy-gOf" kind="show" identifier="addedCart" id="yCC-0g-UYo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -232,7 +236,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfw-5C-PdH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfw-5C-PdH">
                                 <rect key="frame" x="197" y="61" width="207" height="87"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="87" id="Wah-4j-T5F"/>
@@ -515,7 +519,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="Dc9-BO-mLC" kind="show" identifier="viewDetails" id="h2a-bl-2p1"/>
+                                    <segue destination="ahu-2t-6AX" kind="show" identifier="viewDetails" id="h2a-bl-2p1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -559,11 +563,11 @@
                                 <rect key="frame" x="180" y="164" width="240" height="128"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="LxV-VO-Dtb"/>
-                                    <constraint firstAttribute="height" constant="128" id="b6O-Vw-jlO"/>
+                                    <constraint firstAttribute="height" constant="128" id="wFr-xw-khN"/>
+                                    <constraint firstAttribute="width" constant="240" id="wTd-ts-Sdf"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djC-C8-ZeQ">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djC-C8-ZeQ">
                                 <rect key="frame" x="247" y="476" width="107" height="30"/>
                                 <animations/>
                                 <state key="normal" title="View/Edit Menu"/>
@@ -571,7 +575,7 @@
                                     <segue destination="Bbz-db-u7t" kind="show" identifier="viewMenu" id="T58-VA-Aeq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uom-DH-mg6">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uom-DH-mg6">
                                 <rect key="frame" x="245" y="444" width="111" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Edit Cart Details"/>
@@ -586,44 +590,56 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i55-GL-bjI">
-                                <rect key="frame" x="208" y="521" width="184" height="22"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="bWf-cW-wzK"/>
-                                    <constraint firstAttribute="width" constant="184" id="nF7-l8-xjL"/>
-                                </constraints>
-                                <state key="normal" title="OPEN CART"/>
-                                <connections>
-                                    <segue destination="S0b-Hk-mQW" kind="show" identifier="openCart" id="m3M-FP-eNA"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Owner Message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n8r-7O-Lck">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Owner Message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n8r-7O-Lck">
                                 <rect key="frame" x="180" y="300" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="MuN-0P-ENi"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activate Cart:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02i-6n-HNb">
+                                <rect key="frame" x="147" y="532" width="151" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="151" id="wnY-5k-a9C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3La-9h-zbd">
+                                <rect key="frame" x="350" y="528" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uom-DH-mg6" firstAttribute="leading" secondItem="gqq-hh-P3D" secondAttribute="leading" id="D6k-yd-WY1"/>
-                            <constraint firstItem="i55-GL-bjI" firstAttribute="centerX" secondItem="djC-C8-ZeQ" secondAttribute="centerX" id="HVA-5j-0t2"/>
-                            <constraint firstItem="gqq-hh-P3D" firstAttribute="leading" secondItem="3zF-xU-li9" secondAttribute="leading" constant="234" id="JT8-aj-V0t"/>
-                            <constraint firstItem="djC-C8-ZeQ" firstAttribute="top" secondItem="uom-DH-mg6" secondAttribute="bottom" constant="20" id="Lry-SS-MCN"/>
-                            <constraint firstItem="Uj9-fK-Lne" firstAttribute="top" secondItem="gqq-hh-P3D" secondAttribute="bottom" constant="28" id="YT0-4c-dnd"/>
-                            <constraint firstItem="djC-C8-ZeQ" firstAttribute="centerX" secondItem="uom-DH-mg6" secondAttribute="centerX" id="fJh-Ev-BSR"/>
-                            <constraint firstItem="i55-GL-bjI" firstAttribute="centerX" secondItem="YeH-0S-1SO" secondAttribute="centerX" id="izy-u5-xE6"/>
-                            <constraint firstItem="gqq-hh-P3D" firstAttribute="top" secondItem="QgA-mk-XBC" secondAttribute="bottom" constant="48" id="lEZ-WX-5Eu"/>
-                            <constraint firstItem="Uj9-fK-Lne" firstAttribute="centerX" secondItem="gqq-hh-P3D" secondAttribute="centerX" id="qQ1-m5-qnt"/>
-                            <constraint firstItem="uom-DH-mg6" firstAttribute="top" secondItem="YeH-0S-1SO" secondAttribute="bottom" constant="22" id="wgS-qd-3HX"/>
-                            <constraint firstItem="YeH-0S-1SO" firstAttribute="top" secondItem="Uj9-fK-Lne" secondAttribute="bottom" constant="44" id="z2O-zN-IWL"/>
-                            <constraint firstItem="i55-GL-bjI" firstAttribute="top" secondItem="djC-C8-ZeQ" secondAttribute="bottom" constant="29" id="zSu-9c-tX3"/>
+                            <constraint firstItem="djC-C8-ZeQ" firstAttribute="top" secondItem="uom-DH-mg6" secondAttribute="bottom" constant="2" id="2tJ-aA-UCD"/>
+                            <constraint firstItem="n8r-7O-Lck" firstAttribute="centerX" secondItem="gqq-hh-P3D" secondAttribute="centerX" id="50I-Ru-pnf"/>
+                            <constraint firstItem="Uj9-fK-Lne" firstAttribute="top" secondItem="gqq-hh-P3D" secondAttribute="bottom" constant="17" id="7Hh-g1-JQd"/>
+                            <constraint firstItem="djC-C8-ZeQ" firstAttribute="centerX" secondItem="uom-DH-mg6" secondAttribute="centerX" id="9AO-wS-zJF"/>
+                            <constraint firstItem="YeH-0S-1SO" firstAttribute="top" secondItem="Uj9-fK-Lne" secondAttribute="bottom" constant="17" id="ALR-X4-mY6"/>
+                            <constraint firstItem="n8r-7O-Lck" firstAttribute="centerX" secondItem="Uj9-fK-Lne" secondAttribute="centerX" id="MjC-iS-X8B"/>
+                            <constraint firstItem="gqq-hh-P3D" firstAttribute="top" secondItem="QgA-mk-XBC" secondAttribute="bottom" constant="24" id="PgL-fn-SsP"/>
+                            <constraint firstItem="gqq-hh-P3D" firstAttribute="centerX" secondItem="3zF-xU-li9" secondAttribute="centerX" id="Urt-ul-9dO"/>
+                            <constraint firstItem="n8r-7O-Lck" firstAttribute="trailing" secondItem="YeH-0S-1SO" secondAttribute="trailing" id="WR4-YN-KNe"/>
+                            <constraint firstItem="02i-6n-HNb" firstAttribute="centerY" secondItem="3La-9h-zbd" secondAttribute="centerY" id="XS1-EB-F9V"/>
+                            <constraint firstItem="n8r-7O-Lck" firstAttribute="leading" secondItem="YeH-0S-1SO" secondAttribute="leading" id="cOB-t8-Ea0"/>
+                            <constraint firstItem="uom-DH-mg6" firstAttribute="top" secondItem="n8r-7O-Lck" secondAttribute="bottom" constant="16" id="crH-vB-tdq"/>
+                            <constraint firstItem="n8r-7O-Lck" firstAttribute="top" secondItem="YeH-0S-1SO" secondAttribute="bottom" constant="8" symbolic="YES" id="cyX-4S-bQB"/>
+                            <constraint firstItem="02i-6n-HNb" firstAttribute="leading" secondItem="3zF-xU-li9" secondAttribute="leading" constant="147" id="fUn-jd-kZO"/>
+                            <constraint firstItem="b2D-Hj-EXf" firstAttribute="top" secondItem="02i-6n-HNb" secondAttribute="bottom" constant="44" id="kD5-e9-p6G"/>
+                            <constraint firstItem="3La-9h-zbd" firstAttribute="leading" secondItem="02i-6n-HNb" secondAttribute="trailing" constant="52" id="lwz-8L-eHN"/>
+                            <constraint firstItem="3La-9h-zbd" firstAttribute="top" secondItem="djC-C8-ZeQ" secondAttribute="bottom" constant="22" id="u5T-9a-hJz"/>
+                            <constraint firstItem="uom-DH-mg6" firstAttribute="centerX" secondItem="n8r-7O-Lck" secondAttribute="centerX" id="v3z-ol-0fF"/>
+                            <constraint firstItem="02i-6n-HNb" firstAttribute="top" secondItem="djC-C8-ZeQ" secondAttribute="bottom" constant="26" id="ypF-Nd-Hui"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Food Cart Details" id="1c0-aw-yTy"/>
                     <connections>
+                        <outlet property="activateCart" destination="3La-9h-zbd" id="Bme-SD-rvO"/>
+                        <outlet property="activateLabel" destination="02i-6n-HNb" id="Ino-O0-sTW"/>
                         <outlet property="cartNameLabel" destination="gqq-hh-P3D" id="rDx-TT-a8X"/>
                         <outlet property="cuisineTypeLabel" destination="Uj9-fK-Lne" id="nM0-zk-ryg"/>
                         <outlet property="messageLabel" destination="n8r-7O-Lck" id="7w3-zP-UAX"/>
@@ -631,42 +647,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k8f-Rk-fc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1805" y="391"/>
-        </scene>
-        <!--Open Food Cart/Set open hours-->
-        <scene sceneID="SxY-fP-Tz0">
-            <objects>
-                <viewController id="S0b-Hk-mQW" customClass="OpenCartViewController" customModule="MadisonFoodCarts" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3hL-F0-vU6"/>
-                        <viewControllerLayoutGuide type="bottom" id="4Al-Z9-Sy0"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mr6-da-swp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DDQ-nU-83q">
-                                <rect key="frame" x="180" y="114" width="240" height="150"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">This will be the controller that gets the carts location, sends hour information to customer side of app and to map. Was thinking owner would specify when the cart would be opening and closing that day here and the map would display cart during those hours</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Open Food Cart/Set open hours" id="qrY-Gm-Ku8"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kBc-CZ-ji7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2921" y="960"/>
+            <point key="canvasLocation" x="2617" y="391"/>
         </scene>
         <!--Edit Food Cart Details-->
         <scene sceneID="fy2-cA-pNv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JEm-WE-0GP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="32L-ZG-xvA" customClass="EditCartInfoViewController" customModule="MadisonFoodCarts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OJe-XV-0uJ"/>
@@ -762,13 +747,14 @@
                     <navigationItem key="navigationItem" title="Edit Food Cart Details" id="OrG-ye-EyU">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="mNN-a0-Sqy">
                             <connections>
-                                <segue destination="Dc9-BO-mLC" kind="show" id="gh7-Mg-HZA"/>
+                                <segue destination="ahu-2t-6AX" kind="show" id="gh7-Mg-HZA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JEm-WE-0GP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2921" y="-649"/>
+            <point key="canvasLocation" x="2814" y="-475"/>
         </scene>
         <!--Menu-->
         <scene sceneID="FJt-KT-Qpj">
@@ -781,7 +767,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MenuItemCell" id="0vv-vY-G1I">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0vv-vY-G1I" id="CNf-Ge-XrO">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -805,7 +791,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HDH-h0-GDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2921" y="131"/>
+            <point key="canvasLocation" x="3626" y="978"/>
         </scene>
         <!--Menu Item-->
         <scene sceneID="Vee-WG-I6z">
@@ -871,7 +857,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Menu Item" id="Hhq-4i-DXv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="cqT-P1-oiG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="cqT-P1-oiG">
+                            <connections>
+                                <segue destination="Bbz-db-u7t" kind="show" identifier="editedMenuItem" id="Vys-DY-kao"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="itemDescription" destination="Lpf-rN-W39" id="SjE-RK-y7Y"/>
@@ -881,7 +871,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mc2-lz-xiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3960" y="131"/>
+            <point key="canvasLocation" x="4608" y="978"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b08-y7-UgE">
@@ -900,7 +890,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXh-TL-cPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-44" y="105"/>
+            <point key="canvasLocation" x="-52" y="105"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9dz-Qj-VMc">
@@ -936,7 +926,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbl-Hl-hqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1675" y="105"/>
+            <point key="canvasLocation" x="-1669" y="105"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xnl-Y6-iYu">
@@ -954,7 +944,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQH-HP-tAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-848" y="-602"/>
+            <point key="canvasLocation" x="-839" y="-602"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WAS-ru-Ct1">
@@ -974,12 +964,31 @@
             </objects>
             <point key="canvasLocation" x="2921" y="-1500"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CFH-fq-4JS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ahu-2t-6AX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bTc-0C-TdP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Dc9-BO-mLC" kind="relationship" relationship="rootViewController" id="bWz-Ni-cuH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vjq-Pg-a4I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1805" y="391"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6QW-N3-axx"/>
-        <segue reference="wft-3m-W54"/>
-        <segue reference="CTU-xQ-Pwc"/>
         <segue reference="h2a-bl-2p1"/>
+        <segue reference="CuK-8d-L9Q"/>
         <segue reference="d8g-RJ-LO6"/>
+        <segue reference="3yt-QM-dCO"/>
+        <segue reference="gCl-ZB-eNO"/>
+        <segue reference="Vys-DY-kao"/>
     </inferredMetricsTieBreakers>
 </document>

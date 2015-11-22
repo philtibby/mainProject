@@ -18,8 +18,6 @@ class FoodCartMap: NSObject, MKAnnotation
     let cartName: String?
     let title: String?
     let cartOwner: String
-    //let locationName: String
-    //let discipline: String
     let cuisineType: String
     let coordinate: CLLocationCoordinate2D
     let message: String
@@ -28,7 +26,7 @@ class FoodCartMap: NSObject, MKAnnotation
     
     
     
-    init(cartName: String, cartOwner: String,/*locationName: String*/ /*discipline: String,*/ cuisineType: String, coordinate: CLLocationCoordinate2D, message: String, isOpen: Bool)
+    init(cartName: String, cartOwner: String, cuisineType: String, coordinate: CLLocationCoordinate2D, message: String, isOpen: Bool)
     {
         self.cartName = cartName
         self.title = cartName

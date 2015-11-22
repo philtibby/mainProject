@@ -14,7 +14,7 @@ class OperatorTableViewController: UITableViewController {
     
     var didAddOperator = 0
     
-    var theAddedOperator: String = ""
+    var theAddedOperator: String?
 
     override func viewDidLoad()
     {
@@ -22,7 +22,7 @@ class OperatorTableViewController: UITableViewController {
         
         if (didAddOperator == 1)
         {
-                operators.append(theAddedOperator)
+                operators.append(theAddedOperator!)
                 didAddOperator = 0
                 self.tableView.reloadData()
             

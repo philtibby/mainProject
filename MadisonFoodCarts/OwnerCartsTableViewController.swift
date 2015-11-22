@@ -7,13 +7,25 @@
 //
 
 import UIKit
+import Parse
 
 class OwnerCartsTableViewController: UITableViewController
 {
-    
     var ownerCarts = [FoodCart]()
     
-    var newCartCreated = 0;
+    
+    let query = PFQuery(className:"Cart")
+    
+    /*
+
+
+            WHAT THE FUCKING FUCK?!!!
+
+    */
+    
+    
+    
+    var newCartCreated = 0
     
     var theAddedCart: FoodCart?
     
@@ -27,6 +39,7 @@ class OwnerCartsTableViewController: UITableViewController
         {
             ownerCarts.append(theAddedCart!)
             newCartCreated = 0;
+            self.tableView.reloadData()
         }
 
         // Uncomment the following line to preserve selection between presentations
@@ -116,9 +129,6 @@ class OwnerCartsTableViewController: UITableViewController
             {
                 // Pass the selected object to the new view controller.
                 let selectedCart = ownerCarts[indexPath.row]
-                /*svc.cartName = selectedCart.cartName
-                svc.cuisineType = selectedCart.cuisineType
-                svc.ownerMessage = selectedCart.message*/
                 svc.thisCart = selectedCart
             }
         }
@@ -129,6 +139,7 @@ class OwnerCartsTableViewController: UITableViewController
             
             // Pass the selected object to the new view controller.
             svc.cartOwner = thisOwner
+
         }
     }
 }
