@@ -54,7 +54,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate
         var cart : FoodCartMap?;
         
         let query = PFQuery(className:"Cart")
-        //query.whereKey("playerName", equalTo:"Sean Plott")
+        query.whereKey("Loc", notEqualTo:NSNull())
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             

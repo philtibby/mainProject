@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class AddNewCartViewController: UIViewController
+class AddNewCartViewController: UIImagePickerController
 {
     var locationManager: CLLocationManager!
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class OperatorTableViewController: UITableViewController {
     
@@ -19,6 +20,37 @@ class OperatorTableViewController: UITableViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        
+        let query = PFQuery(className:"Cart")
+        query.whereKeyExists("CartOwner")
+        query.findObjectsInBackgroundWithBlock
+        {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil
+            {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) owners.")
+                // Do something with the found objects
+                
+                if let objects = objects as [PFObject]!
+                {
+                    for object in objects
+                    {
+                        if !(self.operators.contains(object["CartOwner"] as! String))
+                        {
+                            self.operators.append(object["CartOwner"] as! String)
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // Log details of the failure
+                //print("Error: \(error!) \(error!.userInfo!)")
+            }
+        }
         
         if (didAddOperator == 1)
         {

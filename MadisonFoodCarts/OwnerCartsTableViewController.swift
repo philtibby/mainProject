@@ -13,18 +13,6 @@ class OwnerCartsTableViewController: UITableViewController
 {
     var ownerCarts = [FoodCart]()
     
-    
-    let query = PFQuery(className:"Cart")
-    
-    /*
-
-
-            WHAT THE FUCKING FUCK?!!!
-
-    */
-    
-    
-    
     var newCartCreated = 0
     
     var theAddedCart: FoodCart?
@@ -33,6 +21,7 @@ class OwnerCartsTableViewController: UITableViewController
 
     override func viewDidLoad()
     {
+        
         super.viewDidLoad()
         
         if (newCartCreated == 1)
