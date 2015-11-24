@@ -21,6 +21,42 @@ class OwnerCartsTableViewController: UITableViewController
 
     override func viewDidLoad()
     {
+        print(thisOwner)
+        let query = PFQuery(className:"Cart")
+        query.whereKey("CartOwner", equalTo: thisOwner)
+        query.findObjectsInBackgroundWithBlock
+            {
+                (objects: [PFObject]?, error: NSError?) -> Void in
+                
+                if error == nil
+                {
+                    // The find succeeded.
+                    print("Successfully retrieved \(objects!.count) carts.")
+                    // Do something with the found objects
+                    
+                    if let objects = objects as [PFObject]!
+                    {
+                        for object in objects
+                        {
+                            let cart = FoodCart(cartName: object["CartName"]! as! String,
+                                cartOwner: object["CartOwner"] as! String,
+                                cuisineType: object["CuisineType"] as! String,
+                                message: object["Message"] as! String,
+                                isOpen: object["isOpen"] as! Bool)
+                            
+                            
+                                self.ownerCarts.append(cart)
+                            
+                        }
+                        self.tableView.reloadData()
+                    }
+                }
+                else
+                {
+                    // Log details of the failure
+                    print("Error: \(error!) \(error!.userInfo)")
+                }
+        }
         
         super.viewDidLoad()
         

@@ -43,12 +43,13 @@ class OperatorTableViewController: UITableViewController {
                             self.operators.append(object["CartOwner"] as! String)
                         }
                     }
+                    self.tableView.reloadData()
                 }
             }
             else
             {
                 // Log details of the failure
-                //print("Error: \(error!) \(error!.userInfo!)")
+                print("Error: \(error!) \(error!.userInfo)")
             }
         }
         
