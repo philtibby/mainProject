@@ -27,6 +27,11 @@ extension ViewController: MKMapViewDelegate {
                 view.canShowCallout = true
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView
+                let button = UIButton(type: .System)
+                button.frame = CGRectMake(100, 100, 100, 50)
+                //button.backgroundColor = UIColor.()
+                button.setTitle("Get Directions", forState: UIControlState.Normal)
+                view.leftCalloutAccessoryView = button as UIView
             }
             return view
         }
@@ -35,8 +40,13 @@ extension ViewController: MKMapViewDelegate {
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView,
         calloutAccessoryControlTapped control: UIControl) {
-            let location = view.annotation as! FoodCartMap
-            let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-            location.mapItem().openInMapsWithLaunchOptions(launchOptions)
+            if control == view.leftCalloutAccessoryView {
+                let location = view.annotation as! FoodCartMap
+                let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+                location.mapItem().openInMapsWithLaunchOptions(launchOptions)
+            } else {
+                performSegueWithIdentifier("MapToMenu", sender: nil)
+            }
     }
+
 }
