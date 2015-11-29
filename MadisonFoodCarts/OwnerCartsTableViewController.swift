@@ -162,8 +162,16 @@ class OwnerCartsTableViewController: UITableViewController
             // Get the new view controller using segue.destinationViewController.
             let svc = segue.destinationViewController as! AddNewCartViewController
             
+            var ownerCartNames = [String]()
+            
+            for (var i = 0; i < ownerCarts.count; i++)
+            {
+                ownerCartNames.append(ownerCarts[i].cartName!)
+            }
+            
             // Pass the selected object to the new view controller.
             svc.cartOwner = thisOwner
+            svc.ownerCarts = ownerCartNames
 
         }
     }

@@ -9,18 +9,19 @@
 import UIKit
 import Parse
 
-class AddNewCartViewController: UIImagePickerController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
+class AddNewCartViewController: UIViewController /*UIImagePickerController, UIImagePickerControllerDelegate, UINavigationControllerDelegate*/
 {
     var locationManager: CLLocationManager!
     
+    var ownerCarts: [String]?
+    
     var cartOwner: String = ""
     
+    @IBOutlet weak var errorLabel: UILabel!
     
     @IBOutlet weak var cartName: UITextField!
     
-    
     @IBOutlet weak var cuisineType: UITextField!
-    
     
     @IBOutlet weak var ownerMessage: UITextView!
     
@@ -38,11 +39,9 @@ class AddNewCartViewController: UIImagePickerController, UIImagePickerController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePicker.delegate = self
+        //imagePicker.delegate = self
         // Do any additional setup after loading the view.
     }
-    
-    
     
     
     // for choosing image
@@ -77,9 +76,6 @@ class AddNewCartViewController: UIImagePickerController, UIImagePickerController
     }
     
     
-    
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -93,12 +89,12 @@ class AddNewCartViewController: UIImagePickerController, UIImagePickerController
         {
             if ident == "addedOperator"
             {
-                /*if (operatorList!.contains(operatorName.text!)) == true
+                if (ownerCarts!.contains(cartName.text!)) == true
                 {
-                    let name: String = operatorName.text!
+                    let name: String = cartName.text!
                     errorLabel.text = "\(name) is already in the list of operators! Please try again!"
                     return false
-                }*/
+                }
             }
         }
         return true
