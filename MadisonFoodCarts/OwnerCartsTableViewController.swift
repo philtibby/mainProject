@@ -13,14 +13,14 @@ class OwnerCartsTableViewController: UITableViewController
 {
     var ownerCarts = [FoodCart]()
     
-    var newCartCreated = 0
-    
     var theAddedCart: FoodCart?
     
     var thisOwner: String = ""
 
     override func viewDidLoad()
     {
+        super.viewDidLoad()
+        
         print(thisOwner)
         let query = PFQuery(className:"Cart")
         query.whereKey("CartOwner", equalTo: thisOwner)
@@ -44,7 +44,6 @@ class OwnerCartsTableViewController: UITableViewController
                                 message: object["Message"] as! String,
                                 isOpen: object["isOpen"] as! Bool)
                             
-                            
                                 self.ownerCarts.append(cart)
                             
                         }
@@ -58,14 +57,9 @@ class OwnerCartsTableViewController: UITableViewController
                 }
         }
         
-        super.viewDidLoad()
         
-        if (newCartCreated == 1)
-        {
-            ownerCarts.append(theAddedCart!)
-            newCartCreated = 0;
-            self.tableView.reloadData()
-        }
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -172,7 +166,6 @@ class OwnerCartsTableViewController: UITableViewController
             // Pass the selected object to the new view controller.
             svc.cartOwner = thisOwner
             svc.ownerCarts = ownerCartNames
-
         }
     }
 }

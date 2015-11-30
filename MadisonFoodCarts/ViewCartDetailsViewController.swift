@@ -80,8 +80,7 @@ class ViewCartDetailsViewController: UIViewController
         {
             let svc = segue.destinationViewController as! CartMenuListTableViewController
             
-            svc.thisCart = thisCart
-        
+            svc.thisCartName = thisCart!.cartName!
         }
     }
 }

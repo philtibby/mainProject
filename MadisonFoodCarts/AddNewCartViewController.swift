@@ -119,7 +119,7 @@ class AddNewCartViewController: UIViewController /*UIImagePickerController, UIIm
         newFoodCart["isOpen"] = false
         
         newFoodCart.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            print("Object has been saved.")
+            print("New food cart has been saved.")
         }
         
         // create a new FoodCart object
@@ -127,7 +127,7 @@ class AddNewCartViewController: UIViewController /*UIImagePickerController, UIIm
 
         // add it to the list of owner's food carts
         svc.theAddedCart = newFC
-        svc.newCartCreated = 1;
+        svc.thisOwner = cartOwner
     }
 }
 

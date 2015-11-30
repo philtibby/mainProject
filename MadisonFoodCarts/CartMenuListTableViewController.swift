@@ -7,15 +7,58 @@
 //
 
 import UIKit
+import Parse
 
 class CartMenuListTableViewController: UITableViewController
 {
     var menuItems = [MenuItem]()
     
-    var thisCart: FoodCart?
+    var theAddedItem: MenuItem?
+    
+    var thisCartName: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(thisCartName)
+        let query = PFQuery(className:"MenuItems")
+        query.whereKey("CartName", equalTo: thisCartName)
+        query.findObjectsInBackgroundWithBlock
+            {
+                (objects: [PFObject]?, error: NSError?) -> Void in
+                
+                if error == nil
+                {
+                    // The find succeeded.
+                    print("Successfully retrieved \(objects!.count) menu items.")
+                    // Do something with the found objects
+                    
+                    if let objects = objects as [PFObject]!
+                    {
+                        for object in objects
+                        {
+                            let menuItem = MenuItem(name: object["Name"] as! String,
+                                cartName: object["CartName"] as! String,
+                                price: object["Price"] as! float_t,
+                                info: object["Description"] as! String)
+                            /*: object["CartName"]! as! String,
+                                cartOwner: object["CartOwner"] as! String,
+                                cuisineType: object["CuisineType"] as! String,
+                                message: object["Message"] as! String,
+                                isOpen: object["isOpen"] as! Bool)*/
+                            
+                            self.menuItems.append(menuItem)
+                            
+                        }
+                        self.tableView.reloadData()
+                    }
+                }
+                else
+                {
+                    // Log details of the failure
+                    print("Error: \(error!) \(error!.userInfo)")
+                }
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -111,9 +154,9 @@ class CartMenuListTableViewController: UITableViewController
         }
         else if (segue.identifier == "addMenuItem")
         {
-            let svc = segue.destinationViewController as! CartMenuItemDetailsViewController
+            let svc = segue.destinationViewController as! AddMenuItemViewController
             
-            svc.thisCartName = thisCart?.cartName
+            svc.thisCartName = thisCartName
         }
     }
 }
