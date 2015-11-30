@@ -23,8 +23,6 @@ class CartMenuListTableViewController: UITableViewController
     {
         super.viewDidLoad()
         
-        //if (menuIsEmpty == false)
-        //{
             print(thisCartName)
             let query = PFQuery(className:"MenuItems")
             query.whereKey("CartName", equalTo: thisCartName)
@@ -46,11 +44,6 @@ class CartMenuListTableViewController: UITableViewController
                                     cartName: object["CartName"] as! String,
                                     price: object["Price"] as! float_t,
                                     info: object["Description"] as! String)
-                                /*: object["CartName"]! as! String,
-                                    cartOwner: object["CartOwner"] as! String,
-                                    cuisineType: object["CuisineType"] as! String,
-                                    message: object["Message"] as! String,
-                                    isOpen: object["isOpen"] as! Bool)*/
                             
                                 self.menuItems.append(menuItem)
                             
@@ -65,7 +58,6 @@ class CartMenuListTableViewController: UITableViewController
                     }
         
                 }
-       // }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

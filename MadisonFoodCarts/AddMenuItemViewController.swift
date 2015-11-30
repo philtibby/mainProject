@@ -52,7 +52,6 @@ class AddMenuItemViewController: UIViewController {
         
         newMenuItem.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("New menu item has been saved.")
-            //svc.menuIsEmpty = false
         }
         
         let newMI = MenuItem(name: itemName.text!, cartName: thisCartName, price: Float(itemPrice.text!)!, info: itemInfo.text!)

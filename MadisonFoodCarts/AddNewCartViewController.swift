@@ -23,7 +23,8 @@ class AddNewCartViewController: UIViewController /*UIImagePickerController, UIIm
     
     @IBOutlet weak var cuisineType: UITextField!
     
-    @IBOutlet weak var ownerMessage: UITextView!
+    //@IBOutlet weak var ownerMessage: UITextView!
+    @IBOutlet weak var ownerMessage: UITextField!
     
     //for choosing cart image
     @IBOutlet weak var cartImage: UIImageView!
@@ -123,7 +124,7 @@ class AddNewCartViewController: UIViewController /*UIImagePickerController, UIIm
         }
         
         // create a new FoodCart object
-        let newFC = FoodCart(cartName: cartName.text!, cartOwner: cartOwner, cuisineType: cuisineType.text!, message: ownerMessage.text, isOpen: false)
+        let newFC = FoodCart(cartName: cartName.text!, cartOwner: cartOwner, cuisineType: cuisineType.text!, message: ownerMessage.text!, isOpen: false)
 
         // add it to the list of owner's food carts
         svc.theAddedCart = newFC

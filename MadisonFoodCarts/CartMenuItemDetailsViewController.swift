@@ -22,6 +22,11 @@ class CartMenuItemDetailsViewController: UIViewController
     
     
     override func viewDidLoad() {
+        
+        itemName.text = thisMenuItem!.name
+        itemDescription.text = thisMenuItem!.info
+        itemPrice.text = thisMenuItem!.price.description
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

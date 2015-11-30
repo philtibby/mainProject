@@ -15,6 +15,11 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
     
     var thisCart: FoodCart?
     
+    @IBOutlet weak var cartName: UITextField!
+    
+    @IBOutlet weak var cuisineType: UITextField!
+    
+    @IBOutlet weak var ownerMessage: UITextField!
     
     // image for cart
     @IBOutlet weak var cartImage: UIImageView!
@@ -30,6 +35,12 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
     
     
     override func viewDidLoad() {
+        
+        cartName.text = thisCart!.cartName
+        cuisineType.text = thisCart!.cuisineType
+        ownerMessage.text = thisCart!.message
+        
+        
         super.viewDidLoad()
         imagePicker.delegate = self
         // Do any additional setup after loading the view.
