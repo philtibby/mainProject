@@ -25,7 +25,7 @@ class OwnerCartsTableViewController: UITableViewController
         let query = PFQuery(className:"Cart")
         query.whereKey("CartOwner", equalTo: thisOwner)
         query.findObjectsInBackgroundWithBlock
-            {
+        {
                 (objects: [PFObject]?, error: NSError?) -> Void in
                 
                 if error == nil

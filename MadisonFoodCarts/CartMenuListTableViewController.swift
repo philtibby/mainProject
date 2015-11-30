@@ -16,49 +16,56 @@ class CartMenuListTableViewController: UITableViewController
     var theAddedItem: MenuItem?
     
     var thisCartName: String = ""
+    
+    var menuIsEmpty: Bool?
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
-        print(thisCartName)
-        let query = PFQuery(className:"MenuItems")
-        query.whereKey("CartName", equalTo: thisCartName)
-        query.findObjectsInBackgroundWithBlock
-            {
-                (objects: [PFObject]?, error: NSError?) -> Void in
+        //if (menuIsEmpty == false)
+        //{
+            print(thisCartName)
+            let query = PFQuery(className:"MenuItems")
+            query.whereKey("CartName", equalTo: thisCartName)
+            query.findObjectsInBackgroundWithBlock
+                {
+                    (objects: [PFObject]?, error: NSError?) -> Void in
                 
-                if error == nil
-                {
-                    // The find succeeded.
-                    print("Successfully retrieved \(objects!.count) menu items.")
-                    // Do something with the found objects
-                    
-                    if let objects = objects as [PFObject]!
+                    if error == nil
                     {
-                        for object in objects
+                        // The find succeeded.
+                        print("Successfully retrieved \(objects!.count) menu items.")
+                        // Do something with the found objects
+                    
+                        if let objects = objects as [PFObject]!
                         {
-                            let menuItem = MenuItem(name: object["Name"] as! String,
-                                cartName: object["CartName"] as! String,
-                                price: object["Price"] as! float_t,
-                                info: object["Description"] as! String)
-                            /*: object["CartName"]! as! String,
-                                cartOwner: object["CartOwner"] as! String,
-                                cuisineType: object["CuisineType"] as! String,
-                                message: object["Message"] as! String,
-                                isOpen: object["isOpen"] as! Bool)*/
+                            for object in objects
+                            {
+                                let menuItem = MenuItem(name: object["Name"] as! String,
+                                    cartName: object["CartName"] as! String,
+                                    price: object["Price"] as! float_t,
+                                    info: object["Description"] as! String)
+                                /*: object["CartName"]! as! String,
+                                    cartOwner: object["CartOwner"] as! String,
+                                    cuisineType: object["CuisineType"] as! String,
+                                    message: object["Message"] as! String,
+                                    isOpen: object["isOpen"] as! Bool)*/
                             
-                            self.menuItems.append(menuItem)
+                                self.menuItems.append(menuItem)
                             
+                            }
+                            self.tableView.reloadData()
                         }
-                        self.tableView.reloadData()
                     }
+                    else
+                    {
+                        // Log details of the failure
+                        print("Error: \(error!) \(error!.userInfo)")
+                    }
+        
                 }
-                else
-                {
-                    // Log details of the failure
-                    print("Error: \(error!) \(error!.userInfo)")
-                }
-        }
+       // }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

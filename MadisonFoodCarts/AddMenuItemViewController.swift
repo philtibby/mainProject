@@ -47,19 +47,17 @@ class AddMenuItemViewController: UIViewController {
         let newMenuItem = PFObject(className:"MenuItems")
         newMenuItem["Name"] = itemName.text
         newMenuItem["CartName"] = thisCartName
-        newMenuItem["Price"] = itemPrice
-        newMenuItem["Description"] = itemInfo
+        newMenuItem["Price"] = Float(itemPrice.text!)!
+        newMenuItem["Description"] = itemInfo.text
         
         newMenuItem.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("New menu item has been saved.")
+            //svc.menuIsEmpty = false
         }
         
         let newMI = MenuItem(name: itemName.text!, cartName: thisCartName, price: Float(itemPrice.text!)!, info: itemInfo.text!)
         
         svc.theAddedItem = newMI
         svc.thisCartName = thisCartName
-        
     }
-    
-
 }
