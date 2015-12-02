@@ -12,6 +12,8 @@ import Parse
 
 extension ViewController: MKMapViewDelegate {
     
+   
+    
     // 1
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         if let annotation = annotation as? FoodCartMap {
@@ -40,13 +42,19 @@ extension ViewController: MKMapViewDelegate {
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView,
         calloutAccessoryControlTapped control: UIControl) {
+            let location = view.annotation as! FoodCartMap
             if control == view.leftCalloutAccessoryView {
-                let location = view.annotation as! FoodCartMap
                 let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
                 location.mapItem().openInMapsWithLaunchOptions(launchOptions)
             } else {
+                zeCart = location
                 performSegueWithIdentifier("MapToMenu", sender: nil)
             }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let svc = segue.destinationViewController as! CartInfoViewController
+        svc.cart = zeCart!
     }
 
 }

@@ -15,6 +15,7 @@ import Contacts
 
 class FoodCartMap: NSObject, MKAnnotation
 {
+    let id: String?
     let cartName: String?
     let title: String?
     let cartOwner: String
@@ -26,8 +27,9 @@ class FoodCartMap: NSObject, MKAnnotation
     
     
     
-    init(cartName: String, cartOwner: String, cuisineType: String, coordinate: CLLocationCoordinate2D, message: String, isOpen: Bool)
+    init(id:String, cartName: String, cartOwner: String, cuisineType: String, coordinate: CLLocationCoordinate2D, message: String, isOpen: Bool)
     {
+        self.id = id
         self.cartName = cartName
         self.title = cartName
         self.cartOwner = cartOwner

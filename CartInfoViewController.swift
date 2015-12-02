@@ -9,10 +9,20 @@
 import UIKit
 
 class CartInfoViewController: UIViewController {
+    
+    var cart : FoodCartMap?
+    
+    
+    @IBOutlet weak var nameOutlet: UILabel!
+    
+    @IBOutlet weak var typeOutlet: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+        nameOutlet.text = cart!.cartName
+        typeOutlet.text = cart!.cuisineType
         // Do any additional setup after loading the view.
     }
 
