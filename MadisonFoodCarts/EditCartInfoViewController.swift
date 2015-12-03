@@ -5,7 +5,7 @@
 //  Created by Carly Hildebrandt on 11/6/15.
 //  Copyright © 2015 Philip Tibbetts. All rights reserved.
 //
-
+import Parse
 import UIKit
 // for camera
 import MobileCoreServices
@@ -84,14 +84,75 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
 
-    /*
-    // MARK: - Navigation
+    
+    
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let svc = segue.destinationViewController as! ViewCartDetailsViewController
+        
+        let query = PFQuery(className:"Cart")
+        query.whereKey("CartName", equalTo: thisCart!.cartName!)
+        query.findObjectsInBackgroundWithBlock
+            {
+                (objects: [PFObject]?, error: NSError?) -> Void in
+                
+                if error == nil
+                {
+                    // The find succeeded.
+                    print("Successfully retrieved the cart to be updated.")
+                    // Do something with the found objects
+                    
+                    if let objects = objects as [PFObject]!
+                    {
+                        for object in objects
+                        {
+                            object["CartName"] = self.cartName.text
+                            object["CuisineType"] = self.cuisineType.text
+                            object["Message"] = self.ownerMessage.text
+                            object.saveInBackground()
+                            
+                            print("Successfully updated the cart details")
+                        }
+                    }
+                }
+                else
+                {
+                    // Log details of the failure
+                    print("Error: \(error!) \(error!.userInfo)")
+                }
+        }
+        let updatedFC = FoodCart(cartName: cartName.text!, cartOwner: thisCart!.cartOwner, cuisineType: cuisineType.text!, message: ownerMessage.text!, isOpen: thisCart!.isOpen)
+        
+        svc.thisCart = updatedFC
     }
-    */
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

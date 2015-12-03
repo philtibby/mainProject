@@ -16,8 +16,6 @@ class CartMenuListTableViewController: UITableViewController
     var theAddedItem: MenuItem?
     
     var thisCartName: String = ""
-    
-    var menuIsEmpty: Bool?
 
     override func viewDidLoad()
     {
@@ -149,6 +147,7 @@ class CartMenuListTableViewController: UITableViewController
                 let selectedItem = menuItems[indexPath.row]
                 
                 svc.thisMenuItem = selectedItem
+                svc.thisCartName = thisCartName
             }
         }
         else if (segue.identifier == "addMenuItem")

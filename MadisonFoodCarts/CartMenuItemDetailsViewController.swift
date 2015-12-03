@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class CartMenuItemDetailsViewController: UIViewController
 {
@@ -21,7 +22,10 @@ class CartMenuItemDetailsViewController: UIViewController
     @IBOutlet weak var itemPrice: UITextField!
     
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
+        
+        print(thisCartName)
         
         itemName.text = thisMenuItem!.name
         itemDescription.text = thisMenuItem!.info
@@ -36,30 +40,47 @@ class CartMenuItemDetailsViewController: UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: - Navigation
-    
-    
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
-        /*
-         //Get the new view controller
+        
+        // Get the new view controller
         let svc = segue.destinationViewController as! CartMenuListTableViewController
         
-        // Pass the selected object to the new view controller.
-        if (segue.identifier == "editedMenuItem")
-        {
-            
-            thisMenuItem.name = itemName.text?
-            thisMenuItem.info = itemDescription.text?
-            thisMenuItem.price = itemPrice.text?
-            
-            
-            svc.menuItems[IndexPath.row] = thisMenuItem
+        let query = PFQuery(className:"MenuItems")
+        query.whereKey("Name", equalTo: thisMenuItem!.name)
+        query.findObjectsInBackgroundWithBlock
+            {
+                (objects: [PFObject]?, error: NSError?) -> Void in
+                
+                if error == nil
+                {
+                    // The find succeeded.
+                    print("Successfully retrieved the menu item to be updated.")
+                    // Do something with the found objects
+                    
+                    if let objects = objects as [PFObject]!
+                    {
+                        for object in objects
+                        {
+                            object["Name"] = self.itemName.text
+                            object["Price"] = Float(self.itemPrice.text!)
+                            object["Description"] = self.itemDescription.text
+                            object.saveInBackground()
+                            
+                            print("Successfully updated the menu item details")
+                        }
+                    }
+                }
+                else
+                {
+                    // Log details of the failure
+                    print("Error: \(error!) \(error!.userInfo)")
+                }
         }
-*/
+        print(thisCartName)
+        svc.thisCartName = thisCartName!
     }
 }
 
