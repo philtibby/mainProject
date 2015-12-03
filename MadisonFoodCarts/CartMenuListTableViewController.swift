@@ -92,21 +92,54 @@ class CartMenuListTableViewController: UITableViewController
         return cell
     }
     
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
     {
         // Return false if you do not want the specified item to be editable.
         return true
-    }*/
+    }
     
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
     {
+        let currentMenuItem = menuItems[indexPath.row]
+        
         if editingStyle == .Delete
         {
             // Delete the row from the data source
+            let query = PFQuery(className:"MenuItems")
+            query.whereKey("Name", equalTo: currentMenuItem.name)
+            query.findObjectsInBackgroundWithBlock
+                {
+                    (objects: [PFObject]?, error: NSError?) -> Void in
+                    
+                    if error == nil
+                    {
+                        // The find succeeded.
+                        print("Successfully retrieved the menu item to be deleted.")
+                        // Do something with the found objects
+                        
+                        if let objects = objects as [PFObject]!
+                        {
+                            for object in objects
+                            {
+                            
+                                object.deleteInBackground()
+                                
+                                print("Successfully deleted the menu item")
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // Log details of the failure
+                        print("Error: \(error!) \(error!.userInfo)")
+                    }
+            }
+
+            
             menuItems.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
@@ -114,7 +147,7 @@ class CartMenuListTableViewController: UITableViewController
         {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
-    }*/
+    }
 
     /*
     // Override to support rearranging the table view.
