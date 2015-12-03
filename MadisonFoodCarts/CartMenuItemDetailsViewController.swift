@@ -24,9 +24,6 @@ class CartMenuItemDetailsViewController: UIViewController
     
     override func viewDidLoad()
     {
-        
-        print(thisCartName)
-        
         itemName.text = thisMenuItem!.name
         itemDescription.text = thisMenuItem!.info
         itemPrice.text = thisMenuItem!.price.description
@@ -79,7 +76,6 @@ class CartMenuItemDetailsViewController: UIViewController
                     print("Error: \(error!) \(error!.userInfo)")
                 }
         }
-        print(thisCartName)
         svc.thisCartName = thisCartName!
     }
 }
