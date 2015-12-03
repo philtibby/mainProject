@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import Parse
 
 class MenuTableViewController: UITableViewController {
     
     //array of menu item objects
     var menuItems = [MenuItem]()
     
+    var cart : FoodCartMap?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         
         //////////SAMPLE DATA FOR MENU ITEM STORAGE//////////////
         
@@ -31,6 +34,43 @@ class MenuTableViewController: UITableViewController {
         newItem = MenuItem(name: "Lasagna", cartName:"Jamerica", price: 29.35, info: "Layers and layers of awesomeness. If you don't think our lasagna is the best you've ever tasted then we will be like woah. Seriously though, this fucking lasagna is the bees knees. It's the cats meow. It takes the breath away. It turns chronic depression into chronic happiness. There is no way a human being could consume our lasagna without having an out of body experience featuring at least 2 of the Beatles, a talking spirit animal, and a monk that doesn't speak but rather understands you. And you him. $29.35 is a small price to pay for this shit. Just order it bro")
         
         menuItems.append(newItem)
+        
+        */
+        
+        let query = PFQuery(className:"MenuItems")
+        query.whereKey("CartName", equalTo: cart!.cartName!)
+        query.findObjectsInBackgroundWithBlock
+            {
+                (objects: [PFObject]?, error: NSError?) -> Void in
+                
+                if error == nil
+                {
+                    // The find succeeded.
+                    print("Successfully retrieved \(objects!.count) menu items.")
+                    // Do something with the found objects
+                    
+                    if let objects = objects as [PFObject]!
+                    {
+                        for object in objects
+                        {
+                            let menuItem = MenuItem(name: object["Name"] as! String,
+                                cartName: object["CartName"] as! String,
+                                price: object["Price"] as! float_t,
+                                info: object["Description"] as! String)
+                            
+                            self.menuItems.append(menuItem)
+                            
+                        }
+                        self.tableView.reloadData()
+                    }
+                }
+                else
+                {
+                    // Log details of the failure
+                    print("Error: \(error!) \(error!.userInfo)")
+                }
+                
+        }
 
     }
 

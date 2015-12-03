@@ -31,6 +31,12 @@ class CartInfoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let svc = segue.destinationViewController as! MenuTableViewController
+        svc.cart = self.cart!
+    }
+    
 
     /*
     // MARK: - Navigation

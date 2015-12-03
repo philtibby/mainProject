@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
-class ViewCartDetailsViewController: UIViewController
+class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
 {
+    
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var activateLabel: UILabel!
     
@@ -50,12 +53,30 @@ class ViewCartDetailsViewController: UIViewController
         {
             activateLabel.text = "Deactivate Cart:"
             thisCart!.isOpen = true
+            
+            // Ask for Authorisation from the User.
+            self.locationManager.requestAlwaysAuthorization()
+            
+            // For use in foreground
+            self.locationManager.requestWhenInUseAuthorization()
+            
+            if CLLocationManager.locationServicesEnabled() {
+                locationManager.delegate = self
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                locationManager.startMonitoringSignificantLocationChanges()
+            }
         }
         else
         {
             activateLabel.text = "Activate Cart:"
             thisCart!.isOpen = false
         }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+    
     }
     
 
