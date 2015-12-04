@@ -24,9 +24,10 @@ class CartMenuItemDetailsViewController: UIViewController
     
     override func viewDidLoad()
     {
+        let priceString = NSString(format:"%.2f", thisMenuItem!.price)
         itemName.text = thisMenuItem!.name
         itemDescription.text = thisMenuItem!.info
-        itemPrice.text = thisMenuItem!.price.description
+        itemPrice.text = priceString as String
         
         super.viewDidLoad()
 

@@ -50,10 +50,16 @@ class AddMenuItemViewController: UIViewController {
         newMenuItem["Price"] = Float(itemPrice.text!)!
         newMenuItem["Description"] = itemInfo.text
         
-        newMenuItem.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            print("New menu item has been saved.")
+        do
+        {
+            try newMenuItem.save()
         }
-        
+            
+        catch
+        {
+            print("Error occured")
+        }
+            
         let newMI = MenuItem(name: itemName.text!, cartName: thisCartName, price: Float(itemPrice.text!)!, info: itemInfo.text!)
         
         svc.theAddedItem = newMI

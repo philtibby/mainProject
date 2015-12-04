@@ -90,19 +90,25 @@ class AddNewCartViewController: UIViewController /*UIImagePickerController, UIIm
         {
             (if ident == "addedCart"
             {
+                //if they name a cart the same as one they already have
                 if (ownerCarts!.contains(cartName.text!)) == true
                 {
                     let name: String = cartName.text!
                     errorLabel.text = "\(name) is already in the list of carts!"
                     return false
                 }
+                //if they forgert to fill out a field
+                if (cartName.text == nil || cuisineType.text == nil || ownerMessage.text == nil)
+                {
+                    errorLabel.text = ("Please fill out all fields")
+                    return false
+                }
             }
         }*/
+        
+        
         return true
     }
-    
-    
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
@@ -119,8 +125,14 @@ class AddNewCartViewController: UIViewController /*UIImagePickerController, UIIm
         newFoodCart["Message"] = ownerMessage.text
         newFoodCart["isOpen"] = false
         
-        newFoodCart.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            print("New food cart has been saved.")
+        do
+        {
+            try newFoodCart.save()
+        }
+        
+        catch
+        {
+            print("Error occured")
         }
         
         // create a new FoodCart object
