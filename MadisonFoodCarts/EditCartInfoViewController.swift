@@ -143,9 +143,8 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
                         {
                             object["CartName"] = self.cartName.text
                             object.saveInBackground()
-                            
-                            print("Successfully updated the menu's cart name")
                         }
+                        print("Successfully updated the menu's cart name")
                     }
                 }
                 else
