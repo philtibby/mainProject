@@ -31,7 +31,7 @@ class OperatorTableViewController: UITableViewController {
             if error == nil
             {
                 // The find succeeded.
-                print("Successfully retrieved \(objects!.count) owners.")
+                print("Successfully retrieved \(objects!.count) food cart objects.")
                 // Do something with the found objects
                 
                 if let objects = objects as [PFObject]!
@@ -43,6 +43,7 @@ class OperatorTableViewController: UITableViewController {
                             self.operators.append(object["CartOwner"] as! String)
                         }
                     }
+                    print("Successfully retrieved \(self.operators.count) operators.")
                     self.tableView.reloadData()
                 }
             }

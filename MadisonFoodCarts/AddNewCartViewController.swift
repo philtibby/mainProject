@@ -86,18 +86,18 @@ class AddNewCartViewController: UIViewController /*UIImagePickerController, UIIm
     //stops the segue if someone tries to make a new cart with the same name as a current cart
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool
     {
-        if let ident = identifier
+        /*if let ident = identifier
         {
-            if ident == "addedOperator"
+            (if ident == "addedCart"
             {
                 if (ownerCarts!.contains(cartName.text!)) == true
                 {
                     let name: String = cartName.text!
-                    errorLabel.text = "\(name) is already in the list of operators! Please try again!"
+                    errorLabel.text = "\(name) is already in the list of carts!"
                     return false
                 }
             }
-        }
+        }*/
         return true
     }
     
