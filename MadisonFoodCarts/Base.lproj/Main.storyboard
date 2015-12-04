@@ -201,7 +201,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="CART OPERATOR"/>
                                 <connections>
-                                    <segue destination="S3c-6h-Yys" kind="show" id="e1y-6q-1Ua"/>
+                                    <segue destination="xI8-tl-grj" kind="show" id="0YQ-f8-n84"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -219,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBX-uM-qTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2837" y="525"/>
+            <point key="canvasLocation" x="-2935" y="537"/>
         </scene>
         <!--New Operator-->
         <scene sceneID="aoz-h4-FF8">
@@ -334,7 +334,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuP-rH-UQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-839" y="105"/>
+            <point key="canvasLocation" x="-1581" y="99"/>
         </scene>
         <!--Cart Info-->
         <scene sceneID="wMg-aU-Fmw">
@@ -1075,25 +1075,6 @@
             <point key="canvasLocation" x="-3699" y="525"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="kaP-GR-X1o">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S3c-6h-Yys" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pIK-Fb-0O0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="xI8-tl-grj" kind="relationship" relationship="rootViewController" id="gCl-ZB-eNO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hbl-Hl-hqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1669" y="105"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="xnl-Y6-iYu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IQ0-BN-PDo" sceneMemberID="viewController">
@@ -1152,12 +1133,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gCl-ZB-eNO"/>
-        <segue reference="WHE-zA-tpI"/>
-        <segue reference="6QW-N3-axx"/>
-        <segue reference="3yt-QM-dCO"/>
-        <segue reference="3Jx-Cn-5Ld"/>
         <segue reference="VsK-4b-FQd"/>
+        <segue reference="3Jx-Cn-5Ld"/>
+        <segue reference="6QW-N3-axx"/>
+        <segue reference="0YQ-f8-n84"/>
+        <segue reference="WHE-zA-tpI"/>
+        <segue reference="3yt-QM-dCO"/>
         <segue reference="d8g-RJ-LO6"/>
     </inferredMetricsTieBreakers>
 </document>
