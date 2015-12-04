@@ -93,7 +93,7 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
         // Get the new view controller using segue.destinationViewController.
         let svc = segue.destinationViewController as! ViewCartDetailsViewController
         
-        let query = PFQuery(className:"Cart")
+        var query = PFQuery(className:"Cart")
         query.whereKey("CartName", equalTo: thisCart!.cartName!)
         query.findObjectsInBackgroundWithBlock
             {
@@ -124,6 +124,37 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
                     print("Error: \(error!) \(error!.userInfo)")
                 }
         }
+        
+        query = PFQuery(className:"MenuItems")
+        query.whereKey("CartName", equalTo: thisCart!.cartName!)
+        query.findObjectsInBackgroundWithBlock
+            {
+                (objects: [PFObject]?, error: NSError?) -> Void in
+                
+                if error == nil
+                {
+                    // The find succeeded.
+                    print("Successfully retrieved the cart who's menu must be updated.")
+                    // Do something with the found objects
+                    
+                    if let objects = objects as [PFObject]!
+                    {
+                        for object in objects
+                        {
+                            object["CartName"] = self.cartName.text
+                            object.saveInBackground()
+                            
+                            print("Successfully updated the menu's cart name")
+                        }
+                    }
+                }
+                else
+                {
+                    // Log details of the failure
+                    print("Error: \(error!) \(error!.userInfo)")
+                }
+        }
+        
         let updatedFC = FoodCart(cartName: cartName.text!, cartOwner: thisCart!.cartOwner, cuisineType: cuisineType.text!, message: ownerMessage.text!, isOpen: thisCart!.isOpen)
         
         svc.thisCart = updatedFC
