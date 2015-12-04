@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Parse
 
 class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
 {
@@ -35,6 +36,12 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
         cartNameLabel.text = thisCart!.cartName
         cuisineTypeLabel.text = thisCart!.cuisineType
         messageLabel.text = thisCart!.message
+        
+        print(thisCart!.isOpen);
+        
+        if (thisCart!.isOpen) {
+            activateCart.setOn(true, animated: true);
+        }
         
         
 
@@ -70,12 +77,39 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
         {
             activateLabel.text = "Activate Cart:"
             thisCart!.isOpen = false
+            
+            let query = PFQuery(className:"Cart")
+            query.getObjectInBackgroundWithId(thisCart!.Id!) {
+                (theCart: PFObject?, error: NSError?) -> Void in
+                if error != nil {
+                    print(error)
+                } else if let theCart = theCart {
+                    theCart["Loc"] = NSNull();
+                    theCart["isOpen"] = false
+                    theCart.saveInBackground()
+                }
+            }
         }
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
+        if (thisCart!.isOpen) {
+            let query = PFQuery(className:"Cart")
+            query.getObjectInBackgroundWithId(thisCart!.Id!) {
+                (theCart: PFObject?, error: NSError?) -> Void in
+                if error != nil {
+                    print(error)
+                } else if let theCart = theCart {
+                    let point = PFGeoPoint(latitude:locValue.latitude, longitude:locValue.longitude)
+                    theCart["Loc"] = point;
+                    theCart["isOpen"] = true
+                    theCart.saveInBackground()
+                }
+            }
+        }
     
     }
     

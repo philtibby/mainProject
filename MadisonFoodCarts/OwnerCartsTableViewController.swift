@@ -42,7 +42,9 @@ class OwnerCartsTableViewController: UITableViewController
                                 cartOwner: object["CartOwner"] as! String,
                                 cuisineType: object["CuisineType"] as! String,
                                 message: object["Message"] as! String,
-                                isOpen: object["isOpen"] as! Bool)
+                                isOpen: object["isOpen"] as! Bool
+                                )
+                            cart.Id = object.objectId!
                             
                                 self.ownerCarts.append(cart)
                             
