@@ -17,12 +17,14 @@ class CartInfoViewController: UIViewController {
     
     @IBOutlet weak var typeOutlet: UILabel!
     
+    @IBOutlet weak var messageOutlet: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
         nameOutlet.text = cart!.cartName
         typeOutlet.text = cart!.cuisineType
+        messageOutlet.text = cart!.message
         // Do any additional setup after loading the view.
     }
 

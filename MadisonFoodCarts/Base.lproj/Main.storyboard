@@ -408,6 +408,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Cart Info" id="hL0-vy-9kn"/>
                     <connections>
+                        <outlet property="messageOutlet" destination="X1d-uu-RvC" id="YZL-G5-VIU"/>
                         <outlet property="nameOutlet" destination="wq8-h4-qmi" id="QHu-UA-ThG"/>
                         <outlet property="typeOutlet" destination="DPu-3D-Bol" id="Q11-LB-bmx"/>
                     </connections>

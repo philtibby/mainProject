@@ -264,6 +264,7 @@
 				TargetAttributes = {
 					4A5FC78F1BCDA5340068754A = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 9MASZD3UPK;
 					};
 					4A5FC7A31BCDA5340068754A = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -532,10 +533,13 @@
 			baseConfigurationReference = 03CEB980D68A1667F284FDF8 /* Pods-MadisonFoodCarts.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MadisonFoodCarts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.wisc.MadisonFoodCarts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -544,10 +548,13 @@
 			baseConfigurationReference = 3C2261C9C240621AD3758E57 /* Pods-MadisonFoodCarts.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MadisonFoodCarts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.wisc.MadisonFoodCarts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
