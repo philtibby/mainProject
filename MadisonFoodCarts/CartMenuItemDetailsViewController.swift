@@ -66,16 +66,16 @@ class CartMenuItemDetailsViewController: UIViewController
                             object["Price"] = Float(self.itemPrice.text!)
                             object["Description"] = self.itemDescription.text
                             
-                            do
+                            /*do
                             {
                                     try object.save()
                             }
                             catch
                             {
                                 print("Error: there is an error")
-                            }
+                            }*/
                             
-                            //object.saveInBackground()
+                            object.saveInBackground()
                             
                             print("Successfully updated the menu item details")
                         }
