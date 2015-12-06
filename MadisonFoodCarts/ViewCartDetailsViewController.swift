@@ -26,6 +26,7 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var messageLabel: UITextView!
     
     var thisCart: FoodCart?
+    var ownerCarts: [String]?
 
     override func viewDidLoad()
     {
@@ -129,6 +130,7 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
             let svc = segue.destinationViewController as! EditCartInfoViewController
             
             svc.thisCart = thisCart
+            svc.ownerCarts = ownerCarts
             
         }
         else if (segue.identifier == "viewMenu")
