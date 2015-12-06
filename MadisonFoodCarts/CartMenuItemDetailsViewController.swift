@@ -45,7 +45,7 @@ class CartMenuItemDetailsViewController: UIViewController
         
         // Get the new view controller
         let svc = segue.destinationViewController as! CartMenuListTableViewController
-        
+        /*
         let query = PFQuery(className:"MenuItems")
         query.whereKey("Name", equalTo: thisMenuItem!.name)
         query.findObjectsInBackgroundWithBlock
@@ -66,16 +66,16 @@ class CartMenuItemDetailsViewController: UIViewController
                             object["Price"] = Float(self.itemPrice.text!)
                             object["Description"] = self.itemDescription.text
                             
-                            /*do
+                            do
                             {
-                                    try object.save()
+                                try object.save()
                             }
                             catch
                             {
                                 print("Error: there is an error")
-                            }*/
+                            }
                             
-                            object.saveInBackground()
+                            //object.saveInBackground()
                             
                             print("Successfully updated the menu item details")
                         }
@@ -86,7 +86,30 @@ class CartMenuItemDetailsViewController: UIViewController
                     // Log details of the failure
                     print("Error: \(error!) \(error!.userInfo)")
                 }
+        } */
+        
+        let query = PFQuery(className:"MenuItems")
+        query.getObjectInBackgroundWithId(thisMenuItem!.Id!) {
+            (object: PFObject?, error: NSError?) -> Void in
+            if error != nil {
+                print(error)
+            } else if let object = object {
+                object["Name"] = self.itemName.text
+                object["Price"] = Float(self.itemPrice.text!)
+                object["Description"] = self.itemDescription.text
+                
+                do
+                {
+                    try object.save()
+                }
+                catch
+                {
+                    print("Error: there is an error")
+                }
+                
+            }
         }
+        
         svc.thisCartName = thisCartName!
     }
 }

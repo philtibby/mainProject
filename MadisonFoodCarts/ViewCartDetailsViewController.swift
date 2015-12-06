@@ -129,6 +129,7 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
             let svc = segue.destinationViewController as! EditCartInfoViewController
             
             svc.thisCart = thisCart
+            svc.thisCart!.Id = thisCart!.Id
             
         }
         else if (segue.identifier == "viewMenu")

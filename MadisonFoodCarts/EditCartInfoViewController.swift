@@ -92,37 +92,28 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
     {
         // Get the new view controller using segue.destinationViewController.
         let svc = segue.destinationViewController as! ViewCartDetailsViewController
+       
         
         var query = PFQuery(className:"Cart")
-        query.whereKey("CartName", equalTo: thisCart!.cartName!)
-        query.findObjectsInBackgroundWithBlock
-            {
-                (objects: [PFObject]?, error: NSError?) -> Void in
+        query.getObjectInBackgroundWithId(thisCart!.Id!) {
+            (object: PFObject?, error: NSError?) -> Void in
+            if error != nil {
+                print(error)
+            } else if let object = object {
+                object["CartName"] = self.cartName.text
+                object["CuisineType"] = self.cuisineType.text
+                object["Message"] = self.ownerMessage.text
                 
-                if error == nil
+                do
                 {
-                    // The find succeeded.
-                    print("Successfully retrieved the cart to be updated.")
-                    // Do something with the found objects
-                    
-                    if let objects = objects as [PFObject]!
-                    {
-                        for object in objects
-                        {
-                            object["CartName"] = self.cartName.text
-                            object["CuisineType"] = self.cuisineType.text
-                            object["Message"] = self.ownerMessage.text
-                            object.saveInBackground()
-                            
-                            print("Successfully updated the cart details")
-                        }
-                    }
+                    try object.save()
                 }
-                else
+                catch
                 {
-                    // Log details of the failure
-                    print("Error: \(error!) \(error!.userInfo)")
+                    print("Error: there is an error")
                 }
+                
+            }
         }
         
         query = PFQuery(className:"MenuItems")
@@ -155,34 +146,10 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
         }
         
         let updatedFC = FoodCart(cartName: cartName.text!, cartOwner: thisCart!.cartOwner, cuisineType: cuisineType.text!, message: ownerMessage.text!, isOpen: thisCart!.isOpen)
+        updatedFC.Id = thisCart!.Id
         
         svc.thisCart = updatedFC
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

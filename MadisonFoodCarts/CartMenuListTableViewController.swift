@@ -42,6 +42,8 @@ class CartMenuListTableViewController: UITableViewController
                                     cartName: object["CartName"] as! String,
                                     price: object["Price"] as! float_t,
                                     info: object["Description"] as! String)
+                                
+                                menuItem.Id = object.objectId
                             
                                 self.menuItems.append(menuItem)
                             
@@ -180,6 +182,7 @@ class CartMenuListTableViewController: UITableViewController
                 let selectedItem = menuItems[indexPath.row]
                 
                 svc.thisMenuItem = selectedItem
+                svc.thisMenuItem!.Id = selectedItem.Id
                 svc.thisCartName = thisCartName
             }
         }

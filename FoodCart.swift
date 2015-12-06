@@ -63,6 +63,7 @@ class FoodCartMap: NSObject, MKAnnotation
 
 class MenuItem: NSObject
 {
+    var Id: String?
     let name: String
     let cartName: String
     let price: Float
