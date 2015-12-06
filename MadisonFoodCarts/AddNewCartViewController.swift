@@ -96,9 +96,7 @@ class AddNewCartViewController: UIViewController /*UIImagePickerController, UIIm
                     errorLabel.text = "\(name) is already in the list of carts!"
                     return false
                 }
-                print(cartName.text)
-                print(cuisineType.text)
-                print(ownerMessage.text)
+
                 //if they forgert to fill out a field
                 if (cartName.text == "" || cuisineType.text == "" || ownerMessage.text == "")
                 {

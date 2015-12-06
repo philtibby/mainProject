@@ -187,6 +187,7 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
         updatedFC.Id = thisCart!.Id
         
         svc.thisCart = updatedFC
+        svc.ownerCarts = ownerCarts
     }
 }
 
