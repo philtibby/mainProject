@@ -23,7 +23,6 @@ class AddNewCartViewController: UIViewController /*UIImagePickerController, UIIm
     
     @IBOutlet weak var cuisineType: UITextField!
     
-    //@IBOutlet weak var ownerMessage: UITextView!
     @IBOutlet weak var ownerMessage: UITextField!
     
     //for choosing cart image
@@ -86,25 +85,28 @@ class AddNewCartViewController: UIViewController /*UIImagePickerController, UIIm
     //stops the segue if someone tries to make a new cart with the same name as a current cart
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool
     {
-        /*if let ident = identifier
+        if let ident = identifier
         {
-            (if ident == "addedCart"
+            if ident == "addedCart"
             {
                 //if they name a cart the same as one they already have
-                if (ownerCarts!.contains(cartName.text!)) == true
+                if ((ownerCarts!.contains(cartName.text!)) == true)
                 {
                     let name: String = cartName.text!
                     errorLabel.text = "\(name) is already in the list of carts!"
                     return false
                 }
+                print(cartName.text)
+                print(cuisineType.text)
+                print(ownerMessage.text)
                 //if they forgert to fill out a field
-                if (cartName.text == nil || cuisineType.text == nil || ownerMessage.text == nil)
+                if (cartName.text == "" || cuisineType.text == "" || ownerMessage.text == "")
                 {
                     errorLabel.text = ("Please fill out all fields")
                     return false
                 }
             }
-        }*/
+        }
         
         
         return true

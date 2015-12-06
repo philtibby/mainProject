@@ -26,6 +26,7 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var messageLabel: UITextView!
     
     var thisCart: FoodCart?
+    var ownerCarts: [String]?
 
     override func viewDidLoad()
     {

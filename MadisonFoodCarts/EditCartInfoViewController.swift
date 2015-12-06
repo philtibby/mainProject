@@ -14,6 +14,11 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
 {
     
     var thisCart: FoodCart?
+    var ownerCarts: [String]?
+    
+    var initialCartName = ""
+    
+    @IBOutlet weak var errorLabel: UILabel!
     
     @IBOutlet weak var cartName: UITextField!
     
@@ -39,6 +44,8 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
         cartName.text = thisCart!.cartName
         cuisineType.text = thisCart!.cuisineType
         ownerMessage.text = thisCart!.message
+        
+        initialCartName = thisCart!.cartName!
         
         
         super.viewDidLoad()
@@ -83,8 +90,39 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
         // Dispose of any resources that can be recreated.
     }
     
-
     
+    //stops the segue if someone tries to make a new cart with the same name as a current cart
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool
+    {
+        if let ident = identifier
+        {
+            if ident == "editedCart"
+            {
+                //if they name a cart the same as one they already have
+                if ((ownerCarts!.contains(cartName.text!)) == true)
+                {
+                    //but it isn't just the same one they already had as the name
+                    if !(cartName.text! == initialCartName)
+                    {
+                        let name: String = cartName.text!
+                        errorLabel.text = "\(name) is already in the list of carts!"
+                        return false
+                    }
+                }
+                print(cartName.text)
+                print(cuisineType.text)
+                print(ownerMessage.text)
+                //if they forgert to fill out a field
+                if (cartName.text == "" || cuisineType.text == "" || ownerMessage.text == "")
+                {
+                    errorLabel.text = ("Please fill out all fields")
+                    return false
+                }
+            }
+        }
+        return true
+    }
+
     
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

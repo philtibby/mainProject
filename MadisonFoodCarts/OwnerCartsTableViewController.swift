@@ -202,6 +202,13 @@ class OwnerCartsTableViewController: UITableViewController
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
+        var ownerCartNames = [String]()
+        
+        for (var i = 0; i < ownerCarts.count; i++)
+        {
+            ownerCartNames.append(ownerCarts[i].cartName!)
+        }
+        
         if (segue.identifier == "viewDetails")
         {
             // Get the new view controller using segue.destinationViewController.
@@ -212,6 +219,7 @@ class OwnerCartsTableViewController: UITableViewController
                 // Pass the selected object to the new view controller.
                 let selectedCart = ownerCarts[indexPath.row]
                 svc.thisCart = selectedCart
+                svc.ownerCarts = ownerCartNames
             }
         }
         else if (segue.identifier == "addCart")
@@ -219,12 +227,7 @@ class OwnerCartsTableViewController: UITableViewController
             // Get the new view controller using segue.destinationViewController.
             let svc = segue.destinationViewController as! AddNewCartViewController
             
-            var ownerCartNames = [String]()
             
-            for (var i = 0; i < ownerCarts.count; i++)
-            {
-                ownerCartNames.append(ownerCarts[i].cartName!)
-            }
             
             // Pass the selected object to the new view controller.
             svc.cartOwner = thisOwner
