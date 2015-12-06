@@ -131,6 +131,7 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
             
             svc.thisCart = thisCart
             svc.thisCart!.Id = thisCart!.Id
+            svc.ownerCarts = ownerCarts
             
         }
         else if (segue.identifier == "viewMenu")
