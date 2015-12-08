@@ -18,7 +18,7 @@ class CartMenuListTableViewController: UITableViewController
     var thisCartName: String = ""
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated);
+        super.viewWillAppear(true);
         print("Menu view appeared")
         
         // append the newly added menu item IF there is one

@@ -36,18 +36,12 @@ class AddOperatorViewController: UIViewController
     //stops the segue if someone tries to make a new operator with the same name as a current operator
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool
     {
-        if let ident = identifier
-        {
-            if ident == "addedOperator"
-            {
                 if (operatorList!.contains(operatorName.text!)) == true
                 {
                     let name: String = operatorName.text!
                     errorLabel.text = "\(name) is already in the list of operators! Please try again!"
                     return false
                 }
-            }
-        }
         return true
     }
 
@@ -58,8 +52,11 @@ class AddOperatorViewController: UIViewController
             let svc = segue.destinationViewController as! OperatorTableViewController
             
             // Pass the selected object to the new view controller.
+        
+            operatorList?.append(operatorName.text!)
             svc.theAddedOperator = operatorName.text!
-            svc.didAddOperator = 1;
+        
+            // svc.didAddOperator = 1;
             svc.operators = operatorList!
     }
 }

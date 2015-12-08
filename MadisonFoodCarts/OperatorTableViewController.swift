@@ -16,6 +16,11 @@ class OperatorTableViewController: UITableViewController {
     var didAddOperator = 0
     
     var theAddedOperator: String?
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        self.tableView.reloadData()
+    }
 
     override func viewDidLoad()
     {
@@ -54,19 +59,26 @@ class OperatorTableViewController: UITableViewController {
             }
         }
         
-        if (didAddOperator == 1)
-        {
-                operators.append(theAddedOperator!)
-                didAddOperator = 0
-                self.tableView.reloadData()
-            
-        }
+//        if (didAddOperator == 1)
+//        {
+//                operators.append(theAddedOperator!)
+//                didAddOperator = 0
+//                self.tableView.reloadData()
+//            
+//        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    // This action allows the add operator view controller to pop back to here
+    @IBAction func exitToHere(segue: UIStoryboardSegue) {
+        
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
