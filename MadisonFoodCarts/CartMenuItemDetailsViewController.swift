@@ -14,6 +14,8 @@ class CartMenuItemDetailsViewController: UIViewController
     var thisCartName: String?
     
     var thisMenuItem: MenuItem?
+    
+    var index: Int = 0;
 
     @IBOutlet weak var itemName: UITextField!
     
@@ -24,12 +26,13 @@ class CartMenuItemDetailsViewController: UIViewController
     
     override func viewDidLoad()
     {
+        super.viewDidLoad()
         let priceString = NSString(format:"%.2f", thisMenuItem!.price)
         itemName.text = thisMenuItem!.name
         itemDescription.text = thisMenuItem!.info
         itemPrice.text = priceString as String
         
-        super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -40,11 +43,42 @@ class CartMenuItemDetailsViewController: UIViewController
     }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    {
+   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+     {
         
         // Get the new view controller
         let svc = segue.destinationViewController as! CartMenuListTableViewController
+        let query = PFQuery(className:"MenuItems")
+        query.getObjectInBackgroundWithId(thisMenuItem!.Id!) {
+            (object: PFObject?, error: NSError?) -> Void in
+            if error != nil {
+                print(error)
+            } else if let object = object {
+                object["Name"] = self.itemName.text
+                object["Price"] = (self.itemPrice.text! as NSString).floatValue
+                object["Description"] = self.itemDescription.text
+                
+                do
+                {
+                    try object.save()
+                }
+                catch
+                {
+                    print("Error: there is an error")
+                }
+                
+            }
+        }
+        
+        // update menu items in addition to updating server info
+        thisMenuItem!.name = self.itemName.text!
+        thisMenuItem!.info = self.itemDescription.text!
+        thisMenuItem!.price = (self.itemPrice.text! as NSString).floatValue
+        
+        
+        
+        svc.menuItems[index] = thisMenuItem!
+        svc.thisCartName = thisCartName!
         /*
         let query = PFQuery(className:"MenuItems")
         query.whereKey("Name", equalTo: thisMenuItem!.name)
@@ -88,30 +122,9 @@ class CartMenuItemDetailsViewController: UIViewController
                 }
         } */
         
-        let query = PFQuery(className:"MenuItems")
-        query.getObjectInBackgroundWithId(thisMenuItem!.Id!) {
-            (object: PFObject?, error: NSError?) -> Void in
-            if error != nil {
-                print(error)
-            } else if let object = object {
-                object["Name"] = self.itemName.text
-                object["Price"] = (self.itemPrice.text! as NSString).floatValue
-                object["Description"] = self.itemDescription.text
-                
-                do
-                {
-                    try object.save()
-                }
-                catch
-                {
-                    print("Error: there is an error")
-                }
-                
-            }
-        }
         
-        svc.thisCartName = thisCartName!
-    }
+        
+   }
 }
 
 

@@ -183,10 +183,15 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
                 }
         }
         
-        let updatedFC = FoodCart(cartName: cartName.text!, cartOwner: thisCart!.cartOwner, cuisineType: cuisineType.text!, message: ownerMessage.text!, isOpen: thisCart!.isOpen)
-        updatedFC.Id = thisCart!.Id
+//        let updatedFC = FoodCart(cartName: cartName.text!, cartOwner: thisCart!.cartOwner, cuisineType: cuisineType.text!, message: ownerMessage.text!, isOpen: thisCart!.isOpen)
+//        svc.thisCart = updatedFC
         
-        svc.thisCart = updatedFC
+        svc.thisCart?.Id = thisCart!.Id
+        svc.thisCart?.cartName = cartName.text!
+        svc.thisCart?.cuisineType = cuisineType.text!
+        svc.thisCart?.message = ownerMessage.text!
+        
+        
         svc.ownerCarts = ownerCarts
     }
 }

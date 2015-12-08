@@ -27,11 +27,8 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
     
     var thisCart: FoodCart?
     var ownerCarts: [String]?
-
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        
+    
+    override func viewWillAppear(animated: Bool) {
         activateCart.addTarget(self, action: Selector("stateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         
         cartNameLabel.text = thisCart!.cartName
@@ -43,6 +40,26 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
         if (thisCart!.isOpen) {
             activateCart.setOn(true, animated: true);
         }
+    }
+    
+    
+    
+
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+//        print("cart details view loaded")
+//        activateCart.addTarget(self, action: Selector("stateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+//        
+//        cartNameLabel.text = thisCart!.cartName
+//        cuisineTypeLabel.text = thisCart!.cuisineType
+//        messageLabel.text = thisCart!.message
+//        
+//        print(thisCart!.isOpen);
+//        
+//        if (thisCart!.isOpen) {
+//            activateCart.setOn(true, animated: true);
+//        }
         
         
 
@@ -52,6 +69,11 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // This action allows the edit cart view controller to pop back to here
+    @IBAction func exitToHere(segue: UIStoryboardSegue) {
+        
     }
     
     

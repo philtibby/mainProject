@@ -10,8 +10,6 @@ import UIKit
 import Parse
 
 class AddMenuItemViewController: UIViewController {
-    
-    
 
     @IBOutlet weak var itemName: UITextField!
     
@@ -20,6 +18,7 @@ class AddMenuItemViewController: UIViewController {
     @IBOutlet weak var itemPrice: UITextField!
     
     var thisCartName = ""
+    
     
     
     override func viewDidLoad() {
@@ -59,7 +58,7 @@ class AddMenuItemViewController: UIViewController {
         {
             print("Error occured")
         }
-            
+        
         let newMI = MenuItem(name: itemName.text!, cartName: thisCartName, price: (itemPrice.text! as NSString).floatValue, info: itemInfo.text!)
         
         svc.theAddedItem = newMI

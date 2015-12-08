@@ -64,10 +64,10 @@ class FoodCartMap: NSObject, MKAnnotation
 class MenuItem: NSObject
 {
     var Id: String?
-    let name: String
+    var name: String
     let cartName: String
-    let price: Float
-    let info: String
+    var price: Float
+    var info: String
     
     init(name: String, cartName: String, price: Float, info: String)
     {

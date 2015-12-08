@@ -16,11 +16,26 @@ class CartMenuListTableViewController: UITableViewController
     var theAddedItem: MenuItem?
     
     var thisCartName: String = ""
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        print("Menu view appeared")
+        
+        // append the newly added menu item IF there is one
+        if (theAddedItem != nil) {
+            self.menuItems.append(theAddedItem!)
+        }
+        theAddedItem = nil
+        self.tableView.reloadData()
+    }
+    
+    
+    
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        print("Menu view loaded")
             print(thisCartName)
             let query = PFQuery(className:"MenuItems")
             query.whereKey("CartName", equalTo: thisCartName)
@@ -65,6 +80,15 @@ class CartMenuListTableViewController: UITableViewController
         //  display an Edit button in the navigation bar for this view controller.
          //self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
+    
+    
+    
+    // This action allows the add and edit menu item view controllers to pop back to here
+    @IBAction func exitToHere(segue: UIStoryboardSegue) {
+        
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -181,6 +205,7 @@ class CartMenuListTableViewController: UITableViewController
             {
                 let selectedItem = menuItems[indexPath.row]
                 
+                svc.index = indexPath.row
                 svc.thisMenuItem = selectedItem
                 svc.thisMenuItem!.Id = selectedItem.Id
                 svc.thisCartName = thisCartName

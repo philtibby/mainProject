@@ -16,6 +16,20 @@ class OwnerCartsTableViewController: UITableViewController
     var theAddedCart: FoodCart?
     
     var thisOwner: String = ""
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        print("Cart view appeared")
+        
+        // append the newly added menu item IF there is one
+        if (theAddedCart != nil) {
+            self.ownerCarts.append(theAddedCart!)
+        }
+        theAddedCart = nil
+        self.tableView.reloadData()
+    }
+    
+    
 
     override func viewDidLoad()
     {
@@ -65,6 +79,13 @@ class OwnerCartsTableViewController: UITableViewController
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    // This action allows the add new cart view controller to pop back to here
+    @IBAction func exitToHere(segue: UIStoryboardSegue) {
+        
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
