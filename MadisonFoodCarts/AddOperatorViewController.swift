@@ -54,7 +54,7 @@ class AddOperatorViewController: UIViewController
             // Pass the selected object to the new view controller.
         
             operatorList?.append(operatorName.text!)
-            svc.theAddedOperator = operatorName.text!
+            // svc.theAddedOperator = operatorName.text!
         
             // svc.didAddOperator = 1;
             svc.operators = operatorList!

@@ -13,9 +13,9 @@ class OperatorTableViewController: UITableViewController {
     
     var operators = [String]()
     
-    var didAddOperator = 0
+    // var didAddOperator = 0
     
-    var theAddedOperator: String?
+    // var theAddedOperator: String?
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)

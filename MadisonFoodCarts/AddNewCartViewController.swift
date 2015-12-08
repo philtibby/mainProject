@@ -85,10 +85,6 @@ class AddNewCartViewController: UIViewController /*UIImagePickerController, UIIm
     //stops the segue if someone tries to make a new cart with the same name as a current cart
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool
     {
-        if let ident = identifier
-        {
-            if ident == "addedCart"
-            {
                 //if they name a cart the same as one they already have
                 if ((ownerCarts!.contains(cartName.text!)) == true)
                 {
@@ -103,9 +99,6 @@ class AddNewCartViewController: UIViewController /*UIImagePickerController, UIIm
                     errorLabel.text = ("Please fill out all fields")
                     return false
                 }
-            }
-        }
-        
         
         return true
     }
