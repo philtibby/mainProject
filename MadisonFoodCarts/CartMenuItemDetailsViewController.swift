@@ -95,7 +95,7 @@ class CartMenuItemDetailsViewController: UIViewController
                 print(error)
             } else if let object = object {
                 object["Name"] = self.itemName.text
-                object["Price"] = Float(self.itemPrice.text!)
+                object["Price"] = (self.itemPrice.text! as NSString).floatValue
                 object["Description"] = self.itemDescription.text
                 
                 do

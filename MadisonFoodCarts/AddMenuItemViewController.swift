@@ -47,7 +47,7 @@ class AddMenuItemViewController: UIViewController {
         let newMenuItem = PFObject(className:"MenuItems")
         newMenuItem["Name"] = itemName.text
         newMenuItem["CartName"] = thisCartName
-        newMenuItem["Price"] = Float(itemPrice.text!)!
+        newMenuItem["Price"] = (itemPrice.text! as NSString).floatValue
         newMenuItem["Description"] = itemInfo.text
         
         do
@@ -60,7 +60,7 @@ class AddMenuItemViewController: UIViewController {
             print("Error occured")
         }
             
-        let newMI = MenuItem(name: itemName.text!, cartName: thisCartName, price: Float(itemPrice.text!)!, info: itemInfo.text!)
+        let newMI = MenuItem(name: itemName.text!, cartName: thisCartName, price: (itemPrice.text! as NSString).floatValue, info: itemInfo.text!)
         
         svc.theAddedItem = newMI
         svc.thisCartName = thisCartName
