@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginButton(sender: AnyObject) {
-        
+      
         
     }
     
@@ -51,34 +51,28 @@ class LoginViewController: UIViewController {
         if (identifier == "login") {
             let query = PFQuery(className:"Operator")
             query.whereKey("username", equalTo: username.text!)
-            print("up here")
             do {
                 let objects = try query.findObjects()
                 if let objects = objects as [PFObject]! {
                     for object in objects
                     {
-                        print(self.password.text!)
-                        print((object["username"] as! String!))
+                        print("password typed: ", self.password.text!)
                         if (self.password.text! == (object["password"] as! String)) {
                             print("match found")
                             self.matchFound = true
-                            print(self.matchFound, " 1")
                             break
                         }
                     }
                 }
                 else {
-                    print("didint work!")
+                    print("something didint work!")
                 }
             }
                 
             catch {
-                print("error occurred")
+                print("error in login occurred")
             }
-            
-            print(self.matchFound, " 5")
             if (self.matchFound) {
-                print("here")
                 self.matchFound = false
                 return true
             }
