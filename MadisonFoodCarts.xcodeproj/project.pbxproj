@@ -28,6 +28,8 @@
 		5BBFB24F1BED97CA00BE2DDE /* CartMenuItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFB24E1BED97CA00BE2DDE /* CartMenuItemDetailsViewController.swift */; };
 		5BBFB2511BED99E700BE2DDE /* CartMenuListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFB2501BED99E700BE2DDE /* CartMenuListTableViewController.swift */; };
 		5BBFB2551BED9C9600BE2DDE /* EditCartInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFB2541BED9C9600BE2DDE /* EditCartInfoViewController.swift */; };
+		5BCCA9E01C178702005B557D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCCA9DF1C178702005B557D /* LoginViewController.swift */; };
+		5BCCA9E21C178730005B557D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCCA9E11C178730005B557D /* RegisterViewController.swift */; };
 		613BA32A1BEAE1A3005B87F6 /* OperatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613BA3291BEAE1A3005B87F6 /* OperatorTableViewController.swift */; };
 		6301E1EF84CD64AA7083BA49 /* Pods_MadisonFoodCarts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B5BD367816ED7135A5A4CE8 /* Pods_MadisonFoodCarts.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +82,8 @@
 		5BBFB24E1BED97CA00BE2DDE /* CartMenuItemDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartMenuItemDetailsViewController.swift; sourceTree = "<group>"; };
 		5BBFB2501BED99E700BE2DDE /* CartMenuListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartMenuListTableViewController.swift; sourceTree = "<group>"; };
 		5BBFB2541BED9C9600BE2DDE /* EditCartInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCartInfoViewController.swift; sourceTree = "<group>"; };
+		5BCCA9DF1C178702005B557D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5BCCA9E11C178730005B557D /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		613BA3291BEAE1A3005B87F6 /* OperatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +167,8 @@
 				4A5FC79F1BCDA5340068754A /* Info.plist */,
 				613BA3291BEAE1A3005B87F6 /* OperatorTableViewController.swift */,
 				3821E2FA1BFEBB5E00997E43 /* AddOperatorViewController.swift */,
+				5BCCA9DF1C178702005B557D /* LoginViewController.swift */,
+				5BCCA9E11C178730005B557D /* RegisterViewController.swift */,
 			);
 			path = MadisonFoodCarts;
 			sourceTree = "<group>";
@@ -386,10 +392,12 @@
 				389A50831C0C0F6E00AC1E63 /* AddMenuItemViewController.swift in Sources */,
 				38A3390C1BE6645900A621EA /* CartInfoViewController.swift in Sources */,
 				5BBFB24D1BED835200BE2DDE /* ViewCartDetailsViewController.swift in Sources */,
+				5BCCA9E21C178730005B557D /* RegisterViewController.swift in Sources */,
 				5BBFB24B1BED82EC00BE2DDE /* AddNewCartViewController.swift in Sources */,
 				38A3390E1BE6672C00A621EA /* MenuTableViewController.swift in Sources */,
 				4A5FC7961BCDA5340068754A /* ViewController.swift in Sources */,
 				5BBFB2511BED99E700BE2DDE /* CartMenuListTableViewController.swift in Sources */,
+				5BCCA9E01C178702005B557D /* LoginViewController.swift in Sources */,
 				5BBFB2551BED9C9600BE2DDE /* EditCartInfoViewController.swift in Sources */,
 				4A9DDCA21BD583BB00A23649 /* ExtViewController.swift in Sources */,
 				4A5FC7941BCDA5340068754A /* AppDelegate.swift in Sources */,
