@@ -358,6 +358,10 @@
                                     <constraint firstAttribute="height" constant="30" id="PyS-FZ-ysc"/>
                                 </constraints>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButton:" destination="Aon-R1-eJz" eventType="touchUpInside" id="zS6-lW-ZVJ"/>
+                                    <segue destination="BLQ-yy-gOf" kind="show" identifier="login" id="4bU-Kx-EOU"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgX-wH-PK6">
                                 <rect key="frame" x="86" y="142" width="429" height="21"/>
@@ -377,7 +381,7 @@
                                 </constraints>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <segue destination="eEc-kH-TaQ" kind="show" id="vYv-kw-aBf"/>
+                                    <segue destination="eEc-kH-TaQ" kind="show" identifier="register" id="vYv-kw-aBf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -406,6 +410,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errMsg" destination="VgX-wH-PK6" id="anJ-Rj-0Uf"/>
                         <outlet property="password" destination="cFs-Pv-OO0" id="NaT-ka-eRc"/>
                         <outlet property="username" destination="MJg-up-AV1" id="rcQ-zI-0HE"/>
                     </connections>
@@ -547,7 +552,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIF-5Q-M5C" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="P7b-Ro-eJK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-3150" y="-669"/>
+            <point key="canvasLocation" x="-3614" y="-557"/>
         </scene>
         <!--Cart Operators-->
         <scene sceneID="jDW-TE-7Hm">
@@ -1309,4 +1314,7 @@
             <point key="canvasLocation" x="-3719" y="537"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4bU-Kx-EOU"/>
+    </inferredMetricsTieBreakers>
 </document>
