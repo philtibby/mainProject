@@ -67,7 +67,7 @@ class RegisterViewController: UIViewController {
             errorMsg.text = "Passwords don't match"
             return false
         }
-        if (password1.text!.characters.count < 6 || username.text!.characters.count < 8) {
+        if (password1.text!.characters.count < 8 || username.text!.characters.count < 6) {
             errorMsg.text = "Username should be greater than 6 characters, passwords greater than 8"
          return false
         }

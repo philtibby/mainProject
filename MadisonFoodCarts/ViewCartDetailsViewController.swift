@@ -28,18 +28,11 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
     var thisCart: FoodCart?
     var ownerCarts: [String]?
     
-    override func viewWillAppear(animated: Bool) {
-        activateCart.addTarget(self, action: Selector("stateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
-        
+    override func viewWillAppear(animated: Bool)
+    {
         cartNameLabel.text = thisCart!.cartName
         cuisineTypeLabel.text = thisCart!.cuisineType
         messageLabel.text = thisCart!.message
-        
-        print(thisCart!.isOpen);
-        
-        if (thisCart!.isOpen) {
-            activateCart.setOn(true, animated: true);
-        }
     }
     
     
@@ -48,19 +41,14 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-//        print("cart details view loaded")
-//        activateCart.addTarget(self, action: Selector("stateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
-//        
-//        cartNameLabel.text = thisCart!.cartName
-//        cuisineTypeLabel.text = thisCart!.cuisineType
-//        messageLabel.text = thisCart!.message
-//        
-//        print(thisCart!.isOpen);
-//        
-//        if (thisCart!.isOpen) {
-//            activateCart.setOn(true, animated: true);
-//        }
+
+        activateCart.addTarget(self, action: Selector("stateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         
+        if (thisCart!.isOpen)
+        {
+            activateCart.setOn(true, animated: true)
+            activateLabel.text = "Deactivate Cart"
+        }
         
 
         // Do any additional setup after loading the view.
@@ -147,7 +135,7 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
         
         
         
-        if (segue.identifier == "editDetails")
+        if (segue.identifier == "editCart")
         {
             let svc = segue.destinationViewController as! EditCartInfoViewController
             
