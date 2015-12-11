@@ -89,17 +89,35 @@ class AddNewCartViewController: UIViewController /*UIImagePickerController, UIIm
                 if ((ownerCarts!.contains(cartName.text!)) == true)
                 {
                     let name: String = cartName.text!
-                    errorLabel.text = "\(name) is already in the list of carts!"
+                    let alertController = UIAlertController(title: "\(name) is already in the list of carts!", message: "Please choose a different cart name.", preferredStyle: .Alert)
+                    
+                    
+                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                        // ...
+                    }
+                    alertController.addAction(OKAction)
+                    
+                    self.presentViewController(alertController, animated: true) {
+                        // ...
+                    }
                     return false
                 }
 
                 //if they forgert to fill out a field
                 if (cartName.text == "" || cuisineType.text == "" || ownerMessage.text == "")
                 {
-                    errorLabel.text = ("Please fill out all fields")
+                    let alertController = UIAlertController(title: "Oops!", message: "Please fill out all fields.", preferredStyle: .Alert)
+                    
+                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                        // ...
+                    }
+                    alertController.addAction(OKAction)
+                    
+                    self.presentViewController(alertController, animated: true) {
+                        // ...
+                    }
                     return false
                 }
-        
         return true
     }
 

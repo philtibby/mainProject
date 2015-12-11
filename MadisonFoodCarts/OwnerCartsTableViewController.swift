@@ -133,6 +133,84 @@ class OwnerCartsTableViewController: UITableViewController
         
         if editingStyle == .Delete
         {
+            let alertController = UIAlertController(title: "Are you sure you wish to delete '\(currentFoodCart.cartName!)'?", message: "This cannot be undone.", preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+                // ...
+            }
+            alertController.addAction(cancelAction)
+            
+            let OKAction = UIAlertAction(title: "Proceed", style: .Default) { (action) in
+                // ...
+                // Delete the menu items associated with the cart first
+                var query = PFQuery(className:"MenuItems")
+                query.whereKey("CartName", equalTo: currentFoodCart.cartName!)
+                query.findObjectsInBackgroundWithBlock
+                    {
+                        (objects: [PFObject]?, error: NSError?) -> Void in
+                        
+                        if error == nil
+                        {
+                            // The find succeeded.
+                            print("Successfully retrieved the menu items to be deleted.")
+                            // Do something with the found objects
+                            
+                            if let objects = objects as [PFObject]!
+                            {
+                                for object in objects
+                                {
+                                    
+                                    object.deleteInBackground()
+                                }
+                                print("Successfully deleted the menu items")
+                            }
+                        }
+                        else
+                        {
+                            // Log details of the failure
+                            print("Error: \(error!) \(error!.userInfo)")
+                        }
+                }
+                // Then delete the food cart from the database
+                query = PFQuery(className:"Cart")
+                query.whereKey("CartName", equalTo: currentFoodCart.cartName!)
+                query.findObjectsInBackgroundWithBlock
+                    {
+                        (objects: [PFObject]?, error: NSError?) -> Void in
+                        
+                        if error == nil
+                        {
+                            // The find succeeded.
+                            print("Successfully retrieved the food cart to be deleted.")
+                            // Do something with the found objects
+                            
+                            if let objects = objects as [PFObject]!
+                            {
+                                for object in objects
+                                {
+                                    
+                                    object.deleteInBackground()
+                                }
+                                print("Successfully deleted the food cart")
+                            }
+                        }
+                        else
+                        {
+                            // Log details of the failure
+                            print("Error: \(error!) \(error!.userInfo)")
+                        }
+                }
+                
+                self.ownerCarts.removeAtIndex(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
+            alertController.addAction(OKAction)
+            
+            self.presentViewController(alertController, animated: true) {
+                // ...
+            }
+            
+            /*
             // Delete the menu items associated with the cart first
             var query = PFQuery(className:"MenuItems")
             query.whereKey("CartName", equalTo: currentFoodCart.cartName!)
@@ -194,7 +272,8 @@ class OwnerCartsTableViewController: UITableViewController
 
             ownerCarts.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-
+            
+            */
             
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

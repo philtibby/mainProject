@@ -94,31 +94,46 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
     //stops the segue if someone tries to make a new cart with the same name as a current cart
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool
     {
-        if let ident = identifier
+        
+        //if they name a cart the same as one they already have
+        if ((ownerCarts!.contains(cartName.text!)) == true)
         {
-            if ident == "editedCart"
+            //but it isn't just the same one they already had as the name
+            if !(cartName.text! == initialCartName)
             {
-                //if they name a cart the same as one they already have
-                if ((ownerCarts!.contains(cartName.text!)) == true)
-                {
-                    //but it isn't just the same one they already had as the name
-                    if !(cartName.text! == initialCartName)
-                    {
-                        let name: String = cartName.text!
-                        errorLabel.text = "\(name) is already in the list of carts!"
-                        return false
-                    }
+                let name: String = cartName.text!
+                        
+                let alertController = UIAlertController(title: "\(name) is already in the list of carts!", message: "Please choose a different cart name.", preferredStyle: .Alert)
+                        
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                            // ...
                 }
-                print(cartName.text)
-                print(cuisineType.text)
-                print(ownerMessage.text)
-                //if they forgert to fill out a field
-                if (cartName.text == "" || cuisineType.text == "" || ownerMessage.text == "")
-                {
-                    errorLabel.text = ("Please fill out all fields")
-                    return false
+                alertController.addAction(OKAction)
+                        
+                self.presentViewController(alertController, animated: true) {
+                            // ...
                 }
+                        
+                        
+                //errorLabel.text = "\(name) is already in the list of carts!"
+                return false
             }
+        }
+                
+        //if they forgert to fill out a field, error pops up
+        if (cartName.text == "" || cuisineType.text == "" || ownerMessage.text == "")
+        {
+            let alertController = UIAlertController(title: "Oops!", message: "Please fill out all fields.", preferredStyle: .Alert)
+                    
+            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                        // ...
+            }
+            alertController.addAction(OKAction)
+                    
+            self.presentViewController(alertController, animated: true) {
+                        // ...
+            }
+            return false
         }
         return true
     }
