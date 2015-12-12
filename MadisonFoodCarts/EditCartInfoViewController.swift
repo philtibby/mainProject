@@ -10,7 +10,7 @@ import UIKit
 // for camera
 import MobileCoreServices
 
-class EditCartInfoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
+class EditCartInfoViewController: UIViewController/*, UIImagePickerControllerDelegate, UINavigationControllerDelegate*/
 {
     
     var thisCart: FoodCart?
@@ -18,16 +18,14 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
     
     var initialCartName = ""
     
-    @IBOutlet weak var errorLabel: UILabel!
-    
     @IBOutlet weak var cartName: UITextField!
     
     @IBOutlet weak var cuisineType: UITextField!
     
-    @IBOutlet weak var ownerMessage: UITextField!
+    @IBOutlet weak var ownerMessage: UITextView!
     
     // image for cart
-    @IBOutlet weak var cartImage: UIImageView!
+    /*@IBOutlet weak var cartImage: UIImageView!
     let imagePicker = UIImagePickerController()
     
     // choosing photo from photo library
@@ -37,6 +35,7 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
         
         presentViewController(imagePicker, animated: true, completion: nil)
     }
+    */
     
     
     override func viewDidLoad() {
@@ -49,13 +48,12 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
         
         
         super.viewDidLoad()
-        imagePicker.delegate = self
-        // Do any additional setup after loading the view.
+        //imagePicker.delegate = self
     }
     
     
     // for choosing image
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
+    /*func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             cartImage.contentMode = .ScaleAspectFit
             cartImage.image = pickedImage
@@ -84,12 +82,12 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    */
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     //stops the segue if someone tries to make a new cart with the same name as a current cart
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool
@@ -113,9 +111,6 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
                 self.presentViewController(alertController, animated: true) {
                             // ...
                 }
-                        
-                        
-                //errorLabel.text = "\(name) is already in the list of carts!"
                 return false
             }
         }
@@ -137,8 +132,6 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
         }
         return true
     }
-
-    
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
@@ -197,10 +190,6 @@ class EditCartInfoViewController: UIViewController, UIImagePickerControllerDeleg
                     print("Error: \(error!) \(error!.userInfo)")
                 }
         }
-        
-//        let updatedFC = FoodCart(cartName: cartName.text!, cartOwner: thisCart!.cartOwner, cuisineType: cuisineType.text!, message: ownerMessage.text!, isOpen: thisCart!.isOpen)
-//        svc.thisCart = updatedFC
-        
         svc.thisCart?.Id = thisCart!.Id
         svc.thisCart?.cartName = cartName.text!
         svc.thisCart?.cuisineType = cuisineType.text!

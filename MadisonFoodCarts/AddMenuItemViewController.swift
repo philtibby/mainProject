@@ -19,8 +19,6 @@ class AddMenuItemViewController: UIViewController {
     
     var thisCartName = ""
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
