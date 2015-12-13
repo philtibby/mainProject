@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        errMsg.text = ""
         // Do any additional setup after loading the view.
     }
     
@@ -98,8 +98,12 @@ class LoginViewController: UIViewController {
         
         if (segue.identifier == "login")
         {
-            let svc = segue.destinationViewController as! OwnerCartsTableViewController
-            svc.thisOwner = self.username.text!
+            
+            let navVC = segue.destinationViewController as! UINavigationController
+            
+            let homeVC = navVC.viewControllers.first as! HomePageViewController
+
+            homeVC.ownerName = self.username.text!
             
         }
         
