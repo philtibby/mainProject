@@ -104,7 +104,7 @@ class AccountInfoViewController: UIViewController {
                     }
                 }
                 else {
-                    print("something didint work - changing password")
+                    print("something didnt work - changing password")
                 }
             }
             catch {
@@ -125,7 +125,6 @@ class AccountInfoViewController: UIViewController {
             let OKAction = UIAlertAction(title: "Proceed", style: .Default)
                 { (action) in
                     // Delete the menu items associated with the carts first
-                    self.choseToDelete = true
                     let cartQuery = PFQuery(className: "Cart")
                     cartQuery.whereKey("CartOwner", equalTo: self.ownerName)
                     cartQuery.findObjectsInBackgroundWithBlock
@@ -165,7 +164,7 @@ class AccountInfoViewController: UIViewController {
                                         
                                         cart.deleteInBackground()
                                     }
-                                    print("Successfully deleted the all carts")
+                                    print("Successfully deleted all carts")
                                 }
                                 
                             }
@@ -201,11 +200,11 @@ class AccountInfoViewController: UIViewController {
                             }
                             
                     }
+                    
+                    //Pop back to initial view controller
+                    
                     let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let vc: UINavigationController = storyboard.instantiateViewControllerWithIdentifier("nav") as! UINavigationController
-                    
-                    //var vc: NewViewController = storyboard.instantiateViewControllerWithIdentifier("newView") as NewViewController
-                    
                     self.presentViewController(vc, animated: true, completion: nil)
                     
                     

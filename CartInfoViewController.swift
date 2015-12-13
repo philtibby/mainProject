@@ -17,7 +17,7 @@ class CartInfoViewController: UIViewController {
     
     @IBOutlet weak var typeOutlet: UILabel!
     
-    @IBOutlet weak var messageOutlet: UILabel!
+    @IBOutlet weak var messageOutlet: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -13,7 +13,8 @@ class MenuItemInfoViewController: UIViewController
 
     var currentItem: MenuItem?
     
-    @IBOutlet weak var iteminfoLabel: UILabel!
+    @IBOutlet weak var itemInfo: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,8 @@ class MenuItemInfoViewController: UIViewController
         //obtain menu item info and set it as the label
         
         let info = currentItem!.info
-        iteminfoLabel.text = info
+        itemInfo.text = info
+        
 
         // Do any additional setup after loading the view.
     }

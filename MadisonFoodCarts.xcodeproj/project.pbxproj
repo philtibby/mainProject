@@ -25,8 +25,6 @@
 		4AF1FDA71BE85EE00003EB1F /* Madison.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 4AF1FDA61BE85EDF0003EB1F /* Madison.gpx */; };
 		5B99B4921C1CBFCA00636F7C /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99B4911C1CBFCA00636F7C /* HomePageViewController.swift */; };
 		5B99B4961C1CE5CB00636F7C /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99B4951C1CE5CB00636F7C /* AccountInfoViewController.swift */; };
-		5B99B4981C1CFE7900636F7C /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99B4971C1CFE7900636F7C /* InitialViewController.swift */; };
-		5B99B49A1C1D131100636F7C /* navViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99B4991C1D131100636F7C /* navViewController.swift */; };
 		5BBFB24B1BED82EC00BE2DDE /* AddNewCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFB24A1BED82EC00BE2DDE /* AddNewCartViewController.swift */; };
 		5BBFB24D1BED835200BE2DDE /* ViewCartDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFB24C1BED835200BE2DDE /* ViewCartDetailsViewController.swift */; };
 		5BBFB24F1BED97CA00BE2DDE /* CartMenuItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFB24E1BED97CA00BE2DDE /* CartMenuItemDetailsViewController.swift */; };
@@ -83,8 +81,6 @@
 		4AF1FDA61BE85EDF0003EB1F /* Madison.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Madison.gpx; path = ../Madison.gpx; sourceTree = "<group>"; };
 		5B99B4911C1CBFCA00636F7C /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		5B99B4951C1CE5CB00636F7C /* AccountInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
-		5B99B4971C1CFE7900636F7C /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
-		5B99B4991C1D131100636F7C /* navViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = navViewController.swift; sourceTree = "<group>"; };
 		5BBFB24A1BED82EC00BE2DDE /* AddNewCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewCartViewController.swift; sourceTree = "<group>"; };
 		5BBFB24C1BED835200BE2DDE /* ViewCartDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCartDetailsViewController.swift; sourceTree = "<group>"; };
 		5BBFB24E1BED97CA00BE2DDE /* CartMenuItemDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartMenuItemDetailsViewController.swift; sourceTree = "<group>"; };
@@ -179,8 +175,6 @@
 				5BCCA9E11C178730005B557D /* RegisterViewController.swift */,
 				5B99B4911C1CBFCA00636F7C /* HomePageViewController.swift */,
 				5B99B4951C1CE5CB00636F7C /* AccountInfoViewController.swift */,
-				5B99B4971C1CFE7900636F7C /* InitialViewController.swift */,
-				5B99B4991C1D131100636F7C /* navViewController.swift */,
 			);
 			path = MadisonFoodCarts;
 			sourceTree = "<group>";
@@ -399,7 +393,6 @@
 				4A6E650B1BD498B300C8BF67 /* FoodCart.swift in Sources */,
 				3821E2FB1BFEBB5E00997E43 /* AddOperatorViewController.swift in Sources */,
 				38A339101BE67C4C00A621EA /* MenuItemInfoViewController.swift in Sources */,
-				5B99B49A1C1D131100636F7C /* navViewController.swift in Sources */,
 				613BA32A1BEAE1A3005B87F6 /* OperatorTableViewController.swift in Sources */,
 				38CDAC861BF8338D00E72102 /* OwnerCartsTableViewController.swift in Sources */,
 				389A50831C0C0F6E00AC1E63 /* AddMenuItemViewController.swift in Sources */,
@@ -411,7 +404,6 @@
 				38A3390E1BE6672C00A621EA /* MenuTableViewController.swift in Sources */,
 				4A5FC7961BCDA5340068754A /* ViewController.swift in Sources */,
 				5BBFB2511BED99E700BE2DDE /* CartMenuListTableViewController.swift in Sources */,
-				5B99B4981C1CFE7900636F7C /* InitialViewController.swift in Sources */,
 				5BCCA9E01C178702005B557D /* LoginViewController.swift in Sources */,
 				5BBFB2551BED9C9600BE2DDE /* EditCartInfoViewController.swift in Sources */,
 				4A9DDCA21BD583BB00A23649 /* ExtViewController.swift in Sources */,

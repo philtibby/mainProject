@@ -13,7 +13,7 @@ class AddMenuItemViewController: UIViewController {
 
     @IBOutlet weak var itemName: UITextField!
     
-    @IBOutlet weak var itemInfo: UITextField!
+    @IBOutlet weak var itemInfo: UITextView!
     
     @IBOutlet weak var itemPrice: UITextField!
     

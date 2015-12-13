@@ -104,6 +104,7 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         
@@ -121,7 +122,7 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
                 }
             }
         }
-    
+        
     }
     
 
