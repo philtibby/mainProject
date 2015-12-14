@@ -17,7 +17,7 @@ class HomePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        greeting.text = "Welcome back, " + ownerName + "!"
+        greeting.text = "Hello " + ownerName + "!"
         // Do any additional setup after loading the view.
     }
 
@@ -45,10 +45,5 @@ class HomePageViewController: UIViewController {
             let svc = segue.destinationViewController as! AccountInfoViewController
             svc.ownerName = self.ownerName
         }
-        
-        
-        
     }
-    
-
 }

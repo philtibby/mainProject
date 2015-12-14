@@ -13,8 +13,6 @@ class LoginViewController: UIViewController {
 
     var matchFound = false
     
-    @IBOutlet weak var errMsg: UILabel!
-    
     @IBOutlet weak var username: UITextField!
     
     @IBOutlet weak var password: UITextField!
@@ -22,8 +20,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        errMsg.text = ""
-        // Do any additional setup after loading the view.
     }
     
     
@@ -48,36 +44,52 @@ class LoginViewController: UIViewController {
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool
     {
         
-        if (identifier == "login") {
+        if (identifier == "login")
+        {
             let query = PFQuery(className:"Operator")
             query.whereKey("username", equalTo: username.text!)
-            do {
+            do
+            {
                 let objects = try query.findObjects()
-                if let objects = objects as [PFObject]! {
+                if let objects = objects as [PFObject]!
+                {
                     for object in objects
                     {
                         print("password typed: ", self.password.text!)
-                        if (self.password.text! == (object["password"] as! String)) {
+                        if (self.password.text! == (object["password"] as! String))
+                        {
                             print("match found")
                             self.matchFound = true
                             break
                         }
                     }
                 }
-                else {
+                else
+                {
                     print("something didint work!")
                 }
             }
-                
-            catch {
+            catch
+            {
                 print("error in login occurred")
             }
-            if (self.matchFound) {
+            if (self.matchFound)
+            {
                 self.matchFound = false
                 return true
             }
-            else {
-                errMsg.text = "Incorrect username or password"
+            else
+            {
+                let alertController = UIAlertController(title: "Incorrect username or password!", message: "Please try again.", preferredStyle: .Alert)
+                
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    // ...
+                }
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true) {
+                    // ...
+                }
                 return false
             }
             

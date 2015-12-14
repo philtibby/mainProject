@@ -17,8 +17,6 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var password2: UITextField!
     
-    @IBOutlet weak var errorMsg: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,49 +30,95 @@ class RegisterViewController: UIViewController {
     
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool
     {
-        if (identifier == "justRegistered") {
+        if (identifier == "justRegistered")
+        {
             var alreadyExists = false
+            
             let query = PFQuery(className:"Operator")
-            
-            
-            query.whereKeyExists("username")
-            query.findObjectsInBackgroundWithBlock
-                {
-                    (objects: [PFObject]?, error: NSError?) -> Void in
-                        // Do something with the found objects
-                        
-                        if let objects = objects as [PFObject]!
+            do {
+                let objects = try query.findObjects()
+                if let objects = objects as [PFObject]! {
+                    for object in objects
+                    {
+                        if (self.username.text == (object["username"] as! String))
                         {
-                            for object in objects
-                            {
-                                if (self.username.text == (object["username"] as! String))
-                                {
-                                self.errorMsg.text = "username already exists"
-                                alreadyExists = true
-                                }
-                            }
+                            alreadyExists = true
+                            break
                         }
-            
+                    }
                 }
-            if (alreadyExists == true) {
+                else
+                {
+                    print("something didint work!")
+                }
+                
+            }
+            catch
+            {
+                print("error occurred")
+            }
+            if (alreadyExists)
+            {
+                let alertController = UIAlertController(title: "Username already exists!", message: "Please pick a new one.", preferredStyle: .Alert)
+                
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    // ...
+                }
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true) {
+                    // ...
+                }
                 return false
             }
-    
+
             
+            // passwords don't match
+            if (password1.text != password2.text)
+            {
+                let alertController = UIAlertController(title: "Oops!", message: "The passwords do not match.", preferredStyle: .Alert)
             
-        // passwords don't match
-        if (password1.text != password2.text) {
-            errorMsg.text = "Passwords don't match"
-            return false
-        }
-        if (password1.text!.characters.count < 8 || username.text!.characters.count < 6) {
-            errorMsg.text = "Username should be greater than 6 characters, passwords greater than 8"
-         return false
-        }
-        
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                // ...
+                }
+                alertController.addAction(OKAction)
             
+                self.presentViewController(alertController, animated: true) {
+                // ...
+                }
+                return false
+            }
+            // not at least 6 characters in username
+            if (username.text!.characters.count < 6)
+            {
+                let alertController = UIAlertController(title: "Oops!", message: "Username must be at least 6 characters.", preferredStyle: .Alert)
+                
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    // ...
+                }
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true) {
+                    // ...
+                }
+                return false
+            }
+            // not at least 8 characters in password
+            if (password1.text!.characters.count < 8)
+            {
+                let alertController = UIAlertController(title: "Oops!", message: "Password must be at least 8 characters.", preferredStyle: .Alert)
+                
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    // ...
+                }
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true) {
+                    // ...
+                }
+                return false
+            }
         }
-        
     return true
     }
     
