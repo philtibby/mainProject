@@ -55,7 +55,7 @@ class CartMenuItemDetailsViewController: UIViewController
         
         // Get the new view controller
         let svc = segue.destinationViewController as! CartMenuListTableViewController
-        let query = PFQuery(className:"MenuItems")
+        /*let query = PFQuery(className:"MenuItems")
         query.getObjectInBackgroundWithId(thisMenuItem!.Id!) {
             (object: PFObject?, error: NSError?) -> Void in
             if error != nil {
@@ -75,30 +75,20 @@ class CartMenuItemDetailsViewController: UIViewController
                 }
                 
             }
-        }
+        }*/
         
-        // update menu items in addition to updating server info
-        thisMenuItem!.name = self.itemName.text!
-        thisMenuItem!.info = self.itemDescription.text!
-        thisMenuItem!.price = (self.itemPrice.text! as NSString).floatValue
-        
-        
-        
-        svc.menuItems[index] = thisMenuItem!
-        svc.thisCartName = thisCartName!
-        /*
         let query = PFQuery(className:"MenuItems")
         query.whereKey("Name", equalTo: thisMenuItem!.name)
         query.findObjectsInBackgroundWithBlock
             {
                 (objects: [PFObject]?, error: NSError?) -> Void in
-                
+        
                 if error == nil
                 {
                     // The find succeeded.
                     print("Successfully retrieved the menu item to be updated.")
                     // Do something with the found objects
-                    
+        
                     if let objects = objects as [PFObject]!
                     {
                         for object in objects
@@ -106,7 +96,7 @@ class CartMenuItemDetailsViewController: UIViewController
                             object["Name"] = self.itemName.text
                             object["Price"] = Float(self.itemPrice.text!)
                             object["Description"] = self.itemDescription.text
-                            
+        
                             do
                             {
                                 try object.save()
@@ -115,9 +105,7 @@ class CartMenuItemDetailsViewController: UIViewController
                             {
                                 print("Error: there is an error")
                             }
-                            
-                            //object.saveInBackground()
-                            
+    
                             print("Successfully updated the menu item details")
                         }
                     }
@@ -127,10 +115,14 @@ class CartMenuItemDetailsViewController: UIViewController
                     // Log details of the failure
                     print("Error: \(error!) \(error!.userInfo)")
                 }
-        } */
+            }
+        // update menu items in addition to updating server info
+        thisMenuItem!.name = self.itemName.text!
+        thisMenuItem!.info = self.itemDescription.text!
+        thisMenuItem!.price = (self.itemPrice.text! as NSString).floatValue
         
-        
-        
+        svc.menuItems[index] = thisMenuItem!
+        svc.thisCartName = thisCartName!
    }
 }
 
