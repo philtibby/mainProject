@@ -193,8 +193,10 @@ class AddNewCartViewController: UIViewController /*UIImagePickerController, UIIm
             print("Error occured")
         }
         
+        
         // create a new FoodCart object
         let newFC = FoodCart(cartName: cartName.text!, cartOwner: cartOwner, cuisineType: cuisineType.text!, message: ownerMessage.text!, isOpen: false)
+        newFC.Id = newFoodCart.objectId
 
         // add it to the list of owner's food carts
         svc.theAddedCart = newFC
