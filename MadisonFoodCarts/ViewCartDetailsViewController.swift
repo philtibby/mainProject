@@ -35,8 +35,6 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
         messageLabel.text = thisCart!.message
     }
     
-    
-    
 
     override func viewDidLoad()
     {
