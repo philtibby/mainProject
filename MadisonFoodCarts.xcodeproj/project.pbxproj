@@ -12,7 +12,8 @@
 		38A3390C1BE6645900A621EA /* CartInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A3390B1BE6645900A621EA /* CartInfoViewController.swift */; };
 		38A3390E1BE6672C00A621EA /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A3390D1BE6672C00A621EA /* MenuTableViewController.swift */; };
 		38A339101BE67C4C00A621EA /* MenuItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A3390F1BE67C4C00A621EA /* MenuItemInfoViewController.swift */; };
-		38B679531C1E42DB0064A670 /* Madison2.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 38B679521C1E42DB0064A670 /* Madison2.gpx */; };
+		38B679531C1E42DB0064A670 /* MadMatt2.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 38B679521C1E42DB0064A670 /* MadMatt2.gpx */; };
+		38B679551C1E6BE40064A670 /* MadMatt1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 38B679541C1E6BE40064A670 /* MadMatt1.gpx */; };
 		38CDAC861BF8338D00E72102 /* OwnerCartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CDAC851BF8338D00E72102 /* OwnerCartsTableViewController.swift */; };
 		4A5FC7941BCDA5340068754A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FC7931BCDA5340068754A /* AppDelegate.swift */; };
 		4A5FC7961BCDA5340068754A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FC7951BCDA5340068754A /* ViewController.swift */; };
@@ -23,7 +24,7 @@
 		4A5FC7B41BCDA5340068754A /* MadisonFoodCartsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FC7B31BCDA5340068754A /* MadisonFoodCartsUITests.swift */; };
 		4A6E650B1BD498B300C8BF67 /* FoodCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E650A1BD498B300C8BF67 /* FoodCart.swift */; };
 		4A9DDCA21BD583BB00A23649 /* ExtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DDCA11BD583BB00A23649 /* ExtViewController.swift */; };
-		4AF1FDA71BE85EE00003EB1F /* Madison.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 4AF1FDA61BE85EDF0003EB1F /* Madison.gpx */; };
+		4AF1FDA71BE85EE00003EB1F /* MadPhil.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 4AF1FDA61BE85EDF0003EB1F /* MadPhil.gpx */; };
 		5B99B4921C1CBFCA00636F7C /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99B4911C1CBFCA00636F7C /* HomePageViewController.swift */; };
 		5B99B4961C1CE5CB00636F7C /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99B4951C1CE5CB00636F7C /* AccountInfoViewController.swift */; };
 		5BBFB24B1BED82EC00BE2DDE /* AddNewCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFB24A1BED82EC00BE2DDE /* AddNewCartViewController.swift */; };
@@ -62,7 +63,8 @@
 		38A3390B1BE6645900A621EA /* CartInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartInfoViewController.swift; path = ../CartInfoViewController.swift; sourceTree = "<group>"; };
 		38A3390D1BE6672C00A621EA /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		38A3390F1BE67C4C00A621EA /* MenuItemInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemInfoViewController.swift; sourceTree = "<group>"; };
-		38B679521C1E42DB0064A670 /* Madison2.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Madison2.gpx; sourceTree = "<group>"; };
+		38B679521C1E42DB0064A670 /* MadMatt2.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = MadMatt2.gpx; sourceTree = "<group>"; };
+		38B679541C1E6BE40064A670 /* MadMatt1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = MadMatt1.gpx; sourceTree = "<group>"; };
 		38CDAC851BF8338D00E72102 /* OwnerCartsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerCartsTableViewController.swift; sourceTree = "<group>"; };
 		3C2261C9C240621AD3758E57 /* Pods-MadisonFoodCarts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadisonFoodCarts.release.xcconfig"; path = "Pods/Target Support Files/Pods-MadisonFoodCarts/Pods-MadisonFoodCarts.release.xcconfig"; sourceTree = "<group>"; };
 		4A5FC7901BCDA5340068754A /* MadisonFoodCarts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MadisonFoodCarts.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +82,7 @@
 		4A5FC7B51BCDA5340068754A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A6E650A1BD498B300C8BF67 /* FoodCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodCart.swift; path = ../FoodCart.swift; sourceTree = "<group>"; };
 		4A9DDCA11BD583BB00A23649 /* ExtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtViewController.swift; path = ../ExtViewController.swift; sourceTree = "<group>"; };
-		4AF1FDA61BE85EDF0003EB1F /* Madison.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Madison.gpx; path = ../Madison.gpx; sourceTree = "<group>"; };
+		4AF1FDA61BE85EDF0003EB1F /* MadPhil.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = MadPhil.gpx; path = ../MadPhil.gpx; sourceTree = "<group>"; };
 		5B99B4911C1CBFCA00636F7C /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		5B99B4951C1CE5CB00636F7C /* AccountInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
 		5BBFB24A1BED82EC00BE2DDE /* AddNewCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewCartViewController.swift; sourceTree = "<group>"; };
@@ -153,8 +155,9 @@
 			isa = PBXGroup;
 			children = (
 				38CDAC851BF8338D00E72102 /* OwnerCartsTableViewController.swift */,
-				4AF1FDA61BE85EDF0003EB1F /* Madison.gpx */,
-				38B679521C1E42DB0064A670 /* Madison2.gpx */,
+				4AF1FDA61BE85EDF0003EB1F /* MadPhil.gpx */,
+				38B679521C1E42DB0064A670 /* MadMatt2.gpx */,
+				38B679541C1E6BE40064A670 /* MadMatt1.gpx */,
 				38A3390B1BE6645900A621EA /* CartInfoViewController.swift */,
 				4A9DDCA11BD583BB00A23649 /* ExtViewController.swift */,
 				4A6E650A1BD498B300C8BF67 /* FoodCart.swift */,
@@ -316,11 +319,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B679551C1E6BE40064A670 /* MadMatt1.gpx in Resources */,
 				4A5FC79E1BCDA5340068754A /* LaunchScreen.storyboard in Resources */,
 				4A5FC79B1BCDA5340068754A /* Assets.xcassets in Resources */,
 				4A5FC7991BCDA5340068754A /* Main.storyboard in Resources */,
-				38B679531C1E42DB0064A670 /* Madison2.gpx in Resources */,
-				4AF1FDA71BE85EE00003EB1F /* Madison.gpx in Resources */,
+				38B679531C1E42DB0064A670 /* MadMatt2.gpx in Resources */,
+				4AF1FDA71BE85EE00003EB1F /* MadPhil.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
