@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,27 +17,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundtrans.png" translatesAutoresizingMaskIntoConstraints="NO" id="hcF-xC-djX">
-                                <rect key="frame" x="129" y="270" width="342" height="330"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mfctext.png" translatesAutoresizingMaskIntoConstraints="NO" id="G8O-Dv-uFf">
+                                <rect key="frame" x="176" y="78" width="248" height="197"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="342" id="KGx-8G-nv6"/>
+                                    <constraint firstAttribute="width" constant="248" id="j5x-aQ-vAs"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mfctext.png" translatesAutoresizingMaskIntoConstraints="NO" id="G8O-Dv-uFf">
-                                <rect key="frame" x="176" y="129" width="248" height="197"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="248" id="OkW-0Q-QP0"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundtrans.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZOz-Zw-hNc">
+                                <rect key="frame" x="109" y="215" width="382" height="385"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.21176470589999999" green="0.41568627450000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="G8O-Dv-uFf" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="109" id="Fnk-xw-7XF"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="G8O-Dv-uFf" secondAttribute="bottom" constant="274" id="Ipc-wJ-U55"/>
-                            <constraint firstItem="G8O-Dv-uFf" firstAttribute="centerX" secondItem="hcF-xC-djX" secondAttribute="centerX" id="JhY-mV-IxL"/>
-                            <constraint firstItem="hcF-xC-djX" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="250" id="PpQ-FP-tMA"/>
-                            <constraint firstItem="hcF-xC-djX" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="m1A-d3-Duc"/>
-                            <constraint firstItem="G8O-Dv-uFf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vrT-nA-bzE"/>
+                            <constraint firstItem="ZOz-Zw-hNc" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="89" id="5bd-uA-gYN"/>
+                            <constraint firstItem="ZOz-Zw-hNc" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="195" id="5uY-Mn-Pd1"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="G8O-Dv-uFf" secondAttribute="bottom" constant="325" id="7n7-hW-Rsx"/>
+                            <constraint firstItem="ZOz-Zw-hNc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8nD-Hd-2uW"/>
+                            <constraint firstItem="G8O-Dv-uFf" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="58" id="Auh-Cp-KYh"/>
+                            <constraint firstItem="ZOz-Zw-hNc" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="GHO-zc-u0k"/>
+                            <constraint firstItem="G8O-Dv-uFf" firstAttribute="centerX" secondItem="ZOz-Zw-hNc" secondAttribute="centerX" id="UAw-pW-AIA"/>
                         </constraints>
                     </view>
                 </viewController>

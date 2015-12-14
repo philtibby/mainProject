@@ -98,7 +98,7 @@
 		613BA3291BEAE1A3005B87F6 /* OperatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorTableViewController.swift; sourceTree = "<group>"; };
 		61495F961C1E5D2B009EFE29 /* mfctext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mfctext.png; path = "../../App demo/mfctext.png"; sourceTree = "<group>"; };
 		61495F971C1E5D2B009EFE29 /* backgroundtrans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundtrans.png; path = "../../App demo/backgroundtrans.png"; sourceTree = "<group>"; };
-		618DD10B1C1EBB2300BD51D0 /* MadUmair.gpx */ = {isa = PBXFileReference; lastKnownFileType = file; name = MadUmair.gpx; path = ../../../Downloads/MadUmair.gpx; sourceTree = SOURCE_ROOT; };
+		618DD10B1C1EBB2300BD51D0 /* MadUmair.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = MadUmair.gpx; path = ../../../Downloads/MadUmair.gpx; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,7 +291,7 @@
 				TargetAttributes = {
 					4A5FC78F1BCDA5340068754A = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 9MASZD3UPK;
+						DevelopmentTeam = JXTYT79G8A;
 					};
 					4A5FC7A31BCDA5340068754A = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -575,7 +575,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MadisonFoodCarts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.wisc.MadisonFoodCartsMatt;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.wisc.MadisonFoodCarts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -590,7 +590,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MadisonFoodCarts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.wisc.MadisonFoodCartsMatt;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.wisc.MadisonFoodCarts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
