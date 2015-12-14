@@ -37,6 +37,7 @@
 		613BA32A1BEAE1A3005B87F6 /* OperatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613BA3291BEAE1A3005B87F6 /* OperatorTableViewController.swift */; };
 		61495F981C1E5D2B009EFE29 /* mfctext.png in Resources */ = {isa = PBXBuildFile; fileRef = 61495F961C1E5D2B009EFE29 /* mfctext.png */; };
 		61495F991C1E5D2B009EFE29 /* backgroundtrans.png in Resources */ = {isa = PBXBuildFile; fileRef = 61495F971C1E5D2B009EFE29 /* backgroundtrans.png */; };
+		618DD10C1C1EBB2300BD51D0 /* MadUmair.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 618DD10B1C1EBB2300BD51D0 /* MadUmair.gpx */; };
 		6301E1EF84CD64AA7083BA49 /* Pods_MadisonFoodCarts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B5BD367816ED7135A5A4CE8 /* Pods_MadisonFoodCarts.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		613BA3291BEAE1A3005B87F6 /* OperatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorTableViewController.swift; sourceTree = "<group>"; };
 		61495F961C1E5D2B009EFE29 /* mfctext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mfctext.png; path = "../../App demo/mfctext.png"; sourceTree = "<group>"; };
 		61495F971C1E5D2B009EFE29 /* backgroundtrans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundtrans.png; path = "../../App demo/backgroundtrans.png"; sourceTree = "<group>"; };
+		618DD10B1C1EBB2300BD51D0 /* MadUmair.gpx */ = {isa = PBXFileReference; lastKnownFileType = file; name = MadUmair.gpx; path = ../../../Downloads/MadUmair.gpx; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 		4A5FC7921BCDA5340068754A /* MadisonFoodCarts */ = {
 			isa = PBXGroup;
 			children = (
+				618DD10B1C1EBB2300BD51D0 /* MadUmair.gpx */,
 				61495F961C1E5D2B009EFE29 /* mfctext.png */,
 				61495F971C1E5D2B009EFE29 /* backgroundtrans.png */,
 				38CDAC851BF8338D00E72102 /* OwnerCartsTableViewController.swift */,
@@ -330,9 +333,12 @@
 				4A5FC79B1BCDA5340068754A /* Assets.xcassets in Resources */,
 				61495F991C1E5D2B009EFE29 /* backgroundtrans.png in Resources */,
 				4A5FC7991BCDA5340068754A /* Main.storyboard in Resources */,
+				38B679531C1E42DB0064A670 /* MadMatt2.gpx in Resources */,
+				4AF1FDA71BE85EE00003EB1F /* MadPhil.gpx in Resources */,
+				618DD10C1C1EBB2300BD51D0 /* MadUmair.gpx in Resources */,
 				61495F981C1E5D2B009EFE29 /* mfctext.png in Resources */,
-				38B679531C1E42DB0064A670 /* Madison2.gpx in Resources */,
-				4AF1FDA71BE85EE00003EB1F /* Madison.gpx in Resources */,
+				38B679531C1E42DB0064A670 /* MadMatt2.gpx in Resources */,
+				4AF1FDA71BE85EE00003EB1F /* MadPhil.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

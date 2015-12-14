@@ -684,7 +684,7 @@
                                 <color key="textColor" red="1" green="0.96078431369999995" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="owner message displayed here" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9e-mr-63z">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="owner message displayed here" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9e-mr-63z">
                                 <rect key="frame" x="180" y="231" width="241" height="128"/>
                                 <color key="backgroundColor" red="0.017868738870000001" green="0.035728225099999997" blue="0.048828125" alpha="0.13" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="1" green="0.96078431369999995" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1260,7 +1260,7 @@
                                 <color key="textColor" red="1" green="0.96078431369999995" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lpf-rN-W39">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lpf-rN-W39">
                                 <rect key="frame" x="174" y="214" width="252" height="128"/>
                                 <color key="backgroundColor" red="0.017868738870000001" green="0.035728225099999997" blue="0.048828125" alpha="0.13" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="1" green="0.96078431369999995" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
