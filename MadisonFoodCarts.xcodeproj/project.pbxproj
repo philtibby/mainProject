@@ -96,8 +96,8 @@
 		5BCCA9DF1C178702005B557D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5BCCA9E11C178730005B557D /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		613BA3291BEAE1A3005B87F6 /* OperatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorTableViewController.swift; sourceTree = "<group>"; };
-		61495F961C1E5D2B009EFE29 /* mfctext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mfctext.png; path = "../../App demo/mfctext.png"; sourceTree = "<group>"; };
-		61495F971C1E5D2B009EFE29 /* backgroundtrans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundtrans.png; path = "../../App demo/backgroundtrans.png"; sourceTree = "<group>"; };
+		61495F961C1E5D2B009EFE29 /* mfctext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mfctext.png; path = ../../Logos/mfctext.png; sourceTree = "<group>"; };
+		61495F971C1E5D2B009EFE29 /* backgroundtrans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundtrans.png; path = ../../Logos/backgroundtrans.png; sourceTree = "<group>"; };
 		618DD10B1C1EBB2300BD51D0 /* MadUmair.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = MadUmair.gpx; path = ../../../Downloads/MadUmair.gpx; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
