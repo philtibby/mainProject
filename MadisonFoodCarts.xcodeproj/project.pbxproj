@@ -22,6 +22,9 @@
 		4A5FC79E1BCDA5340068754A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5FC79C1BCDA5340068754A /* LaunchScreen.storyboard */; };
 		4A5FC7A91BCDA5340068754A /* MadisonFoodCartsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FC7A81BCDA5340068754A /* MadisonFoodCartsTests.swift */; };
 		4A5FC7B41BCDA5340068754A /* MadisonFoodCartsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5FC7B31BCDA5340068754A /* MadisonFoodCartsUITests.swift */; };
+		4A6BE6E31C1F55F6000B8025 /* backgroundtrans.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6BE6E01C1F55F6000B8025 /* backgroundtrans.png */; };
+		4A6BE6E41C1F55F6000B8025 /* MadUmair.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 4A6BE6E11C1F55F6000B8025 /* MadUmair.gpx */; };
+		4A6BE6E51C1F55F6000B8025 /* mfctext.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6BE6E21C1F55F6000B8025 /* mfctext.png */; };
 		4A6E650B1BD498B300C8BF67 /* FoodCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E650A1BD498B300C8BF67 /* FoodCart.swift */; };
 		4A9DDCA21BD583BB00A23649 /* ExtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DDCA11BD583BB00A23649 /* ExtViewController.swift */; };
 		4AF1FDA71BE85EE00003EB1F /* MadPhil.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 4AF1FDA61BE85EDF0003EB1F /* MadPhil.gpx */; };
@@ -35,9 +38,6 @@
 		5BCCA9E01C178702005B557D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCCA9DF1C178702005B557D /* LoginViewController.swift */; };
 		5BCCA9E21C178730005B557D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCCA9E11C178730005B557D /* RegisterViewController.swift */; };
 		613BA32A1BEAE1A3005B87F6 /* OperatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613BA3291BEAE1A3005B87F6 /* OperatorTableViewController.swift */; };
-		61495F981C1E5D2B009EFE29 /* mfctext.png in Resources */ = {isa = PBXBuildFile; fileRef = 61495F961C1E5D2B009EFE29 /* mfctext.png */; };
-		61495F991C1E5D2B009EFE29 /* backgroundtrans.png in Resources */ = {isa = PBXBuildFile; fileRef = 61495F971C1E5D2B009EFE29 /* backgroundtrans.png */; };
-		618DD10C1C1EBB2300BD51D0 /* MadUmair.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 618DD10B1C1EBB2300BD51D0 /* MadUmair.gpx */; };
 		6301E1EF84CD64AA7083BA49 /* Pods_MadisonFoodCarts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B5BD367816ED7135A5A4CE8 /* Pods_MadisonFoodCarts.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +83,9 @@
 		4A5FC7AF1BCDA5340068754A /* MadisonFoodCartsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MadisonFoodCartsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5FC7B31BCDA5340068754A /* MadisonFoodCartsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadisonFoodCartsUITests.swift; sourceTree = "<group>"; };
 		4A5FC7B51BCDA5340068754A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A6BE6E01C1F55F6000B8025 /* backgroundtrans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundtrans.png; sourceTree = "<group>"; };
+		4A6BE6E11C1F55F6000B8025 /* MadUmair.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = MadUmair.gpx; sourceTree = "<group>"; };
+		4A6BE6E21C1F55F6000B8025 /* mfctext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mfctext.png; sourceTree = "<group>"; };
 		4A6E650A1BD498B300C8BF67 /* FoodCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodCart.swift; path = ../FoodCart.swift; sourceTree = "<group>"; };
 		4A9DDCA11BD583BB00A23649 /* ExtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtViewController.swift; path = ../ExtViewController.swift; sourceTree = "<group>"; };
 		4AF1FDA61BE85EDF0003EB1F /* MadPhil.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = MadPhil.gpx; path = ../MadPhil.gpx; sourceTree = "<group>"; };
@@ -96,9 +99,6 @@
 		5BCCA9DF1C178702005B557D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5BCCA9E11C178730005B557D /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		613BA3291BEAE1A3005B87F6 /* OperatorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorTableViewController.swift; sourceTree = "<group>"; };
-		61495F961C1E5D2B009EFE29 /* mfctext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mfctext.png; path = ../../Logos/mfctext.png; sourceTree = "<group>"; };
-		61495F971C1E5D2B009EFE29 /* backgroundtrans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundtrans.png; path = ../../Logos/backgroundtrans.png; sourceTree = "<group>"; };
-		618DD10B1C1EBB2300BD51D0 /* MadUmair.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = MadUmair.gpx; path = ../../../Downloads/MadUmair.gpx; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,10 +160,10 @@
 		4A5FC7921BCDA5340068754A /* MadisonFoodCarts */ = {
 			isa = PBXGroup;
 			children = (
-				618DD10B1C1EBB2300BD51D0 /* MadUmair.gpx */,
-				61495F961C1E5D2B009EFE29 /* mfctext.png */,
-				61495F971C1E5D2B009EFE29 /* backgroundtrans.png */,
 				38CDAC851BF8338D00E72102 /* OwnerCartsTableViewController.swift */,
+				4A6BE6E01C1F55F6000B8025 /* backgroundtrans.png */,
+				4A6BE6E11C1F55F6000B8025 /* MadUmair.gpx */,
+				4A6BE6E21C1F55F6000B8025 /* mfctext.png */,
 				4AF1FDA61BE85EDF0003EB1F /* MadPhil.gpx */,
 				38B679521C1E42DB0064A670 /* MadMatt2.gpx */,
 				38B679541C1E6BE40064A670 /* MadMatt1.gpx */,
@@ -330,15 +330,15 @@
 			files = (
 				38B679551C1E6BE40064A670 /* MadMatt1.gpx in Resources */,
 				4A5FC79E1BCDA5340068754A /* LaunchScreen.storyboard in Resources */,
+				4A6BE6E31C1F55F6000B8025 /* backgroundtrans.png in Resources */,
+				4A6BE6E51C1F55F6000B8025 /* mfctext.png in Resources */,
 				4A5FC79B1BCDA5340068754A /* Assets.xcassets in Resources */,
-				61495F991C1E5D2B009EFE29 /* backgroundtrans.png in Resources */,
 				4A5FC7991BCDA5340068754A /* Main.storyboard in Resources */,
 				38B679531C1E42DB0064A670 /* MadMatt2.gpx in Resources */,
 				4AF1FDA71BE85EE00003EB1F /* MadPhil.gpx in Resources */,
-				618DD10C1C1EBB2300BD51D0 /* MadUmair.gpx in Resources */,
-				61495F981C1E5D2B009EFE29 /* mfctext.png in Resources */,
 				38B679531C1E42DB0064A670 /* MadMatt2.gpx in Resources */,
 				4AF1FDA71BE85EE00003EB1F /* MadPhil.gpx in Resources */,
+				4A6BE6E41C1F55F6000B8025 /* MadUmair.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
