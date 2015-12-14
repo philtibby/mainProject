@@ -13,7 +13,9 @@ class MenuItemInfoViewController: UIViewController
 
     var currentItem: MenuItem?
         
-    @IBOutlet weak var itemInfo: UITextView!
+    //@IBOutlet weak var itemInfo: UITextView!
+    
+    @IBOutlet weak var itemInfo: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

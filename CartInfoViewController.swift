@@ -17,6 +17,7 @@ class CartInfoViewController: UIViewController {
     
     @IBOutlet weak var typeOutlet: UILabel!
     
+    //@IBOutlet weak var messageOutlet: UITextView!
     @IBOutlet weak var messageOutlet: UITextView!
     
     let beige = UIColor(red: 255/255, green: 245/255, blue: 178/255, alpha: 1)

@@ -24,6 +24,7 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var cuisineTypeLabel: UILabel!
     
     @IBOutlet weak var messageLabel: UITextView!
+    //@IBOutlet weak var messageLabel: UITextView!
     
     var thisCart: FoodCart?
     var ownerCarts: [String]?
