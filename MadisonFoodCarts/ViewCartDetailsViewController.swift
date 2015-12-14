@@ -122,7 +122,6 @@ class ViewCartDetailsViewController: UIViewController, CLLocationManagerDelegate
                 }
             }
         }
-        
     }
     
 

@@ -97,40 +97,66 @@ class AddNewCartViewController: UIViewController /*UIImagePickerController, UIIm
     //stops the segue if someone tries to make a new cart with the same name as a current cart
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool
     {
-                //if they name a cart the same as one they already have
-                if ((ownerCarts!.contains(cartName.text!)) == true)
+        var cartNameTaken = false
+        
+        let query = PFQuery(className:"Cart")
+        do {
+            let objects = try query.findObjects()
+            if let objects = objects as [PFObject]!
+            {
+                for object in objects
                 {
-                    let name: String = cartName.text!
-                    let alertController = UIAlertController(title: "\(name) is already in the list of carts!", message: "Please choose a different cart name.", preferredStyle: .Alert)
-                    
-                    
-                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-                        // ...
+                    if (self.cartName.text == (object["CartName"] as! String))
+                    {
+                        cartNameTaken = true
+                        break
                     }
-                    alertController.addAction(OKAction)
-                    
-                    self.presentViewController(alertController, animated: true) {
-                        // ...
-                    }
-                    return false
                 }
-
-                //if they forgert to fill out a field
-                if (cartName.text == "" || cuisineType.text == "" || ownerMessage.text == "")
-                {
-                    let alertController = UIAlertController(title: "Oops!", message: "Please fill out all fields.", preferredStyle: .Alert)
+            }
+            else
+            {
+                print("Something didn't work!")
+            }
+            
+        }
+        catch
+        {
+            print("Error occurred!")
+        }
+        //if they name a cart the same as one they already have
+        if (cartNameTaken)
+        {
+            let name: String = cartName.text!
+            let alertController = UIAlertController(title: "A cart named \(name) already exists!", message: "Please choose a different cart name.", preferredStyle: .Alert)
                     
-                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-                        // ...
-                    }
-                    alertController.addAction(OKAction)
                     
-                    self.presentViewController(alertController, animated: true) {
+            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                // ...
+            }
+            alertController.addAction(OKAction)
+                    
+            self.presentViewController(alertController, animated: true) {
                         // ...
-                    }
-                    return false
-                }
-        return true
+            }
+            return false
+        }
+        
+        //if they forgert to fill out a field
+        if (cartName.text == "" || cuisineType.text == "" || ownerMessage.text == "")
+        {
+                let alertController = UIAlertController(title: "Oops!", message: "Please fill out all fields.", preferredStyle: .Alert)
+                    
+            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                        // ...
+            }
+            alertController.addAction(OKAction)
+                    
+            self.presentViewController(alertController, animated: true) {
+                        // ...
+            }
+            return false
+        }
+    return true
     }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
