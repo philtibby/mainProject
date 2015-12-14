@@ -15,6 +15,10 @@ class OwnerCartsTableViewController: UITableViewController
     
     var theAddedCart: FoodCart?
     
+    let bgColor = UIColor(red: 54/255, green: 106/255, blue: 145/255, alpha: 1)
+    let tintColor = UIColor(red: 75/255, green: 150/255, blue: 205/255, alpha: 1)
+    let beige = UIColor(red: 255/255, green: 245/255, blue: 178/255, alpha: 1)
+    
     var thisOwner: String = ""
     
     override func viewWillAppear(animated: Bool) {
@@ -28,12 +32,13 @@ class OwnerCartsTableViewController: UITableViewController
         theAddedCart = nil
         self.tableView.reloadData()
     }
-    
-    
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        tableView.backgroundColor = bgColor
+        tableView.separatorColor = tintColor
         
         print(thisOwner)
         let query = PFQuery(className:"Cart")
@@ -112,7 +117,14 @@ class OwnerCartsTableViewController: UITableViewController
         let currentCart = ownerCarts[indexPath.row]
         
         cell.textLabel?.text = currentCart.cartName
-
+        cell.backgroundColor = bgColor
+        cell.textLabel?.textColor = beige
+        
+        //Highlights cell with color of choice
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = tintColor
+        cell.selectedBackgroundView = backgroundView
+        
         return cell
     }
     

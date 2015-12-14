@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,8 +15,29 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundtrans.png" translatesAutoresizingMaskIntoConstraints="NO" id="hcF-xC-djX">
+                                <rect key="frame" x="129" y="270" width="342" height="330"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="342" id="KGx-8G-nv6"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mfctext.png" translatesAutoresizingMaskIntoConstraints="NO" id="G8O-Dv-uFf">
+                                <rect key="frame" x="176" y="129" width="248" height="197"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="248" id="OkW-0Q-QP0"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21176470589999999" green="0.41568627450000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="G8O-Dv-uFf" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="109" id="Fnk-xw-7XF"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="G8O-Dv-uFf" secondAttribute="bottom" constant="274" id="Ipc-wJ-U55"/>
+                            <constraint firstItem="G8O-Dv-uFf" firstAttribute="centerX" secondItem="hcF-xC-djX" secondAttribute="centerX" id="JhY-mV-IxL"/>
+                            <constraint firstItem="hcF-xC-djX" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="250" id="PpQ-FP-tMA"/>
+                            <constraint firstItem="hcF-xC-djX" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="m1A-d3-Duc"/>
+                            <constraint firstItem="G8O-Dv-uFf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vrT-nA-bzE"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +45,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backgroundtrans.png" width="1230" height="1249"/>
+        <image name="mfctext.png" width="679" height="539"/>
+    </resources>
 </document>

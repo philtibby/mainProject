@@ -17,6 +17,10 @@ class CartMenuListTableViewController: UITableViewController
     
     var thisCartName: String = ""
     
+    let bgColor = UIColor(red: 54/255, green: 106/255, blue: 145/255, alpha: 1)
+    let tintColor = UIColor(red: 75/255, green: 150/255, blue: 205/255, alpha: 1)
+    let beige = UIColor(red: 255/255, green: 245/255, blue: 178/255, alpha: 1)
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true);
         print("Menu view appeared")
@@ -28,13 +32,13 @@ class CartMenuListTableViewController: UITableViewController
         theAddedItem = nil
         self.tableView.reloadData()
     }
-    
-    
-    
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        tableView.backgroundColor = bgColor
+        tableView.separatorColor = tintColor
         print("Menu view loaded")
             print(thisCartName)
             let query = PFQuery(className:"MenuItems")
@@ -114,6 +118,13 @@ class CartMenuListTableViewController: UITableViewController
         let currentMenuItem = menuItems[indexPath.row]
         
         cell.textLabel?.text = currentMenuItem.name
+        cell.backgroundColor = bgColor
+        cell.textLabel?.textColor = beige
+        
+        //Highlights cell with color of choice
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = tintColor
+        cell.selectedBackgroundView = backgroundView
         
         return cell
     }

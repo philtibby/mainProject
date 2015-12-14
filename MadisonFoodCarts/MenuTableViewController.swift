@@ -16,9 +16,15 @@ class MenuTableViewController: UITableViewController {
     
     var cart : FoodCartMap?
     
+    let bgColor = UIColor(red: 54/255, green: 106/255, blue: 145/255, alpha: 1)
+    let tintColor = UIColor(red: 75/255, green: 150/255, blue: 205/255, alpha: 1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.backgroundColor = bgColor
+        tableView.separatorColor = tintColor
+        
         
         let query = PFQuery(className:"MenuItems")
         query.whereKey("CartName", equalTo: cart!.cartName!)

@@ -53,9 +53,18 @@ class AddNewCartViewController: UIViewController /*UIImagePickerController, UIIm
     override func viewDidLoad() {
         super.viewDidLoad()
         //imagePicker.delegate = self
-        // Do any additional setup after loading the view.
+
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
     }
     
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     
     // for choosing image
     /*func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
